@@ -15,7 +15,6 @@ import org.springframework.cache.annotation.EnableCaching;
 @EnableCaching
 public class NormativeExamineApplication {
 
-    //ceshi
     public static void main(String[] args) {
         SpringApplication.run(NormativeExamineApplication.class, args);
     }
