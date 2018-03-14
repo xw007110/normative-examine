@@ -1,5 +1,7 @@
 package com.wesite.normative.examine.entity.system;
 
+import com.wesite.normative.examine.systemConfig.Check;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,8 +9,11 @@ import java.util.Date;
  * @author 
  */
 public class SysUser implements Serializable {
+
+    @Check(notNull = true)
     private String guid;
 
+    @Check(notNull = true)
     private String userName;
 
     private String loginAccount;

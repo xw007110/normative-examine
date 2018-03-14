@@ -37,8 +37,16 @@ public class BaseResult {
         this.data = data;
     }
 
-    public static BaseResult ok(Object data){
-        return new BaseResult(true , SystemMsgBase.SUCCESS_COMMON_CODE , SystemMsgBase.SUCCESS_COMMON_MSG , data);
+    public static BaseResult ok(Object data) {
+        return new BaseResult(true, SystemMsgBase.SUCCESS_COMMON_CODE, SystemMsgBase.SUCCESS_COMMON_MSG, data);
+    }
+
+    public static BaseResult fail(int code, String msg, Object data) {
+        return new BaseResult(false, code, msg, data);
+    }
+
+    public static BaseResult systemError(){
+        return new BaseResult(false,SystemMsgBase.SYSTEM_ERROR_CODE , SystemMsgBase.SYSTEM_ERROR_MSG , null);
     }
 
 

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * 测试类
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author XuanMing
  * @create 2018/2/27 18:24
  **/
+@ApiIgnore
 @RestController
 @RequestMapping("/system")
 public class DemoController {
