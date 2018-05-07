@@ -1,0 +1,41 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> 权益列表
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>类型</th>
+                <th>权益值</th>
+                <th>状态</th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let profit of profits">
+                <td>
+                  <input class="profitId" type="checkbox" [value]="profit.id" [checked]="myProfits.indexOf(profit.id)!=-1"/>
+                </td>
+                <td>{{profit.typeDesc}}</td>
+                <td>{{profit.parameter}}</td>
+                <td>{{profit.lockup == true ? '锁定' : '解锁'}}</td>
+                <td>{{profit.remark}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-outline-primary btn-sm" [routerLink]="['/base/member/grade/list']">返回</button>
+          <button type="button" class="btn btn-outline-info btn-sm" (click)="sure()">确定
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

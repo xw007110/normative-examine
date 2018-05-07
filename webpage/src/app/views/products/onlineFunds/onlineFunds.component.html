@@ -1,0 +1,47 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class='no-padding-right' [ngClass]="{'leftSmall':toggleFlag,'col-md-5':!toggleFlag}">
+      <productTemplate [productState]="productState" [toggleFlag]="toggleFlag" [isLoading]="isLoading"
+                       [buttonPermission]="buttonPermission"
+                       [itemList]="itemList" (returnEvent)="getByParam($event)"
+                       (returnUpdateStateEvent)="updateState($event)"
+                       (returnToggleEvent)="toogle($event)"></productTemplate>
+    </div>
+    <div class='no-padding-right' [ngClass]="{'rightStrong':toggleFlag,'col-md-7':!toggleFlag}">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-responsive table-hover table-outline">
+            <thead class="thead-default">
+            <tr>
+              <th></th>
+              <th>金额</th>
+              <th>期限</th>
+              <th>利率</th>
+              <th>产品状态</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let online of onlineFunds">
+              <td>
+                <input name="radio" type="radio"
+                       (click)="recordCheck(online)"/>
+              </td>
+              <td>{{online.amount+online.amountUnitDesc}}</td>
+              <td>{{(online.dateValueType=='1'?(online.dateUnit=='4'?'':online.dateStart):online.dateStart+'-'+online.dateEnd)+online.dateUnitDesc}}</td>
+              <td>{{online.interestrate+online.interestrateUnitDesc}}</td>
+              <td>{{online.stateDesc}}</td>
+              <td>
+                <a [routerLink]="['/products/onlineFunds/detail',online.id]">详情
+                </a>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+          <page *ngIf="loadMsgGrid.loaded" [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

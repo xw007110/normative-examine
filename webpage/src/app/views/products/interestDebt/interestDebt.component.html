@@ -1,0 +1,48 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class='no-padding-right' [ngClass]="{'leftSmall':toggleFlag,'col-md-5':!toggleFlag}">
+      <productTemplate [productState]="productState" [toggleFlag]="toggleFlag" [isLoading]="isLoading"
+                       [buttonPermission]="buttonPermission" [itemList]="itemList" (returnEvent)="getByParam($event)"
+                       (returnUpdateStateEvent)="updateState($event)"
+                       (returnToggleEvent)="toogle($event)"></productTemplate>
+    </div>
+    <div class='no-padding-right' [ngClass]="{'rightStrong':toggleFlag,'col-md-7':!toggleFlag}">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-responsive table-hover table-outline">
+            <thead class="thead-default">
+            <tr>
+              <th></th>
+              <th>债券名称</th>
+              <th>发行期限</th>
+              <th>发行规模</th>
+              <th>票面利率</th>
+              <th>产品状态</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let i of interestDebt">
+              <td>
+                <input name="radio" type="radio"
+                       (click)="recordCheck(i)"/>
+              </td>
+              <td>{{i.name}}</td>
+              <td>{{i.dateStart+i.dateUnitDesc}}</td>
+              <td>{{i.amount+i.amountUnitDesc}}</td>
+              <td>{{i.couponRate+'%'}}</td>
+              <td>{{i.stateDesc}}</td>
+              <td>
+                <a [routerLink]="['/products/interestDebt/detail',i.id]">详情
+                </a>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+          <page *ngIf="loadMsgGrid.loaded" [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

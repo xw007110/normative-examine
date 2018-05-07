@@ -1,0 +1,69 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="card-body">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col-md-4">
+              <div class="input-group">
+                                      <span class="input-group-btn">
+                                        <button type="button" class="btn">状态：</button>
+                                      </span>
+                <select id="select" name="select" class="form-control" [(ngModel)]="feedbackParams.state">
+                  <option value=""></option>
+                  <option value="1">未处理</option>
+                  <option value="2">处理中</option>
+                  <option value="3">已处理</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header">
+          <button class="btn btn-outline-info btn-sm" [ladda]='isLoading' (click)="query()">查询</button>
+          <button class="btn btn-outline-info btn-sm" (click)="handle()" [hidden]="buttons.indexOf('cms.feedback.list.checking')==-1">去处理</button>
+          <button class="btn btn-outline-info btn-sm" (click)="goChecked()" [hidden]="buttons.indexOf('cms.feedback.list.checking')==-1">已完成</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div *ngIf="!loadMsgOrgGrid.loaded">
+            {{loadMsgOrgGrid.message}}
+          </div>
+          <table class="table table-responsive table-hover table-outline" *ngIf="loadMsgOrgGrid.loaded">
+            <thead>
+              <tr>
+                <th></th>
+                <th>用户名</th>
+                <th>标题</th>
+                <th>内容</th>
+                <th>状态</th>
+                <th>处理结果</th>
+                <th>反馈时间</th>
+                <th>处理时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let feedback of feedbacks">
+                <td>
+                    <input id="checkbox{{feedback.id}}" name="radio" type="radio"
+                    (click)="recordCheck(feedback)"/>
+                </td>
+                <td>{{feedback.memberName}}</td>
+                <td>{{feedback.title}}</td>
+                <td>{{feedback.content}}</td>                
+                <td>{{feedback.stateDesc}}</td>
+                <td>{{feedback.result}}</td>
+                <td>{{feedback.creatTime}}</td>
+                <td>{{feedback.updateTime}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <page [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

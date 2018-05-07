@@ -1,0 +1,57 @@
+
+.card-body{
+  padding:5px 10px;
+}
+.productTemplate .card-body button[type="button"] {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background: none;
+}
+
+.productTemplate .card-body button.selected {
+  color: #fff;
+  background-color: #20a8d8;
+  border-color: #20a8d8;
+}
+.card-body label{
+  line-height:31px;
+  margin-left:5px;
+}
+
+.card-body input{
+ margin-right:5px;
+}
+
+.card-body span{
+  margin:0px 5px;
+}
+.padding-right-5 {
+  padding-right: 5px;
+
+}
+
+.padding-left-5 {
+  padding-left: 5px;
+}
+
+.padding-5 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.no-l-r-padding {
+  padding: 5px 0px;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.no-padding-right {
+  padding-right: 0px;
+}
+
+.padding-l-r-15 {
+  padding: 0px 15px;
+  margin-bottom:5px;
+}

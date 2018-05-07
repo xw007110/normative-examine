@@ -1,0 +1,98 @@
+<div class="row animated fadeIn">
+  <!-- 机构树 -->
+  <div [ngClass]="{'leftSmall':toggleOrgFlag,'col-md-3':!toggleOrgFlag}">
+    <div class="card">
+      <div class="card-header" (click)="toggleOrgFlag=!toggleOrgFlag">
+        <i class="fa fa-align-justify"></i> 所有机构
+      </div>
+      <div class="card-body">
+        <orgTree (queryOrgList)="queryOrgList($event)" [type]="orgType"></orgTree>
+      </div>
+    </div>
+  </div>
+  <!-- 机构表格 -->
+  <div [ngClass]="{'rightStrong':toggleOrgFlag,'col-md-9':!toggleOrgFlag}">
+      <div class="card">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn">锁定状态：</button>
+              </span>
+              <select id="lockup" name="lockup" class="form-control" [(ngModel)]="orgParams.lockup">
+                <option value="">请选择</option>
+                <option value="true">锁定</option>
+                <option value="false">解锁</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn">机构名称：</button>
+              </span>
+              <input type="text" id="name" name="name" class="form-control" placeholder="请输入机构名称"
+                     [(ngModel)]="orgParams.name">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <button type="button" class="btn btn-outline-info btn-sm" [ladda]='isLoading' (click)="query()">查询</button>
+        <button type="button" class="btn btn-outline-info btn-sm"
+                [hidden]="buttons.indexOf('basics.org.add')==-1"
+                [routerLink]="['/base/organization/add']">增加
+        </button>
+        <button type="button" class="btn btn-outline-info btn-sm"
+                [hidden]="buttons.indexOf('basics.org.update')==-1" (click)="goUpdate()">修改
+        </button>
+        <button type="button" class="btn btn-outline-info btn-sm"
+                [hidden]="buttons.indexOf('basics.org.delete')==-1" (click)="delete()">删除
+        </button>
+        <button type="button" class="btn btn-outline-info btn-sm"
+                [hidden]="buttons.indexOf('basics.org.lock')==-1" (click)="lockup()">
+          {{!seletedOrg?'锁定': seletedOrg.lockup?'解锁':'锁定'}}
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <div class="card-body">
+        <div *ngIf="!loadMsgOrgGrid.loaded">
+          {{loadMsgOrgGrid.message}}
+        </div>
+        <table class="table table-responsive table-hover table-outline" *ngIf="loadMsgOrgGrid.loaded">
+          <thead class="thead-default">
+          <tr>
+            <th></th>
+            <th>机构编码</th>
+            <th>机构名称</th>
+            <th>类型描述</th>
+            <th>锁定状态</th>
+            <th>创建时间</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let organization of organizations">
+            <td>
+              <input id="checkbox{{organization.id}}" name="radio" type="radio"
+                     (click)="recordCheck(organization)"/>
+            </td>
+            <td>{{organization.code}}</td>
+            <td>{{organization.name}}</td>
+            <td>{{organization.typeDesc}}</td>
+            <td>{{organization.lockup==true?'已锁定':'已解锁'}}</td>
+            <td>{{organization.createTime}}</td>
+          </tr>
+          </tbody>
+        </table>
+        <page *ngIf="loadMsgOrgGrid.loaded" [pageParams]="pageParams"
+              (changeCurPage)="getPageData($event)"></page>
+      </div>
+    </div>
+      </div>
+  </div>
+</div>

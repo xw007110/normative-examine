@@ -1,0 +1,76 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="card-block">
+
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col-md-4">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <button type="button" class="btn">名称：&nbsp;&nbsp;&nbsp;</button>
+                </span>
+                <input type="text" id="name" name="name" class="form-control" placeholder="请输入名称"
+                       [(ngModel)]="circleParams.name">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header">
+            <button type="button" class="btn btn-outline-info btn-sm" [ladda]='isLoading' (click)="query()">查询</button>
+            <button class="btn btn-outline-info btn-sm" [routerLink]="['/circle/add']"
+             [hidden]="buttons.indexOf('circle.add')==-1">
+              增加
+            </button>
+            <button class="btn btn-outline-info btn-sm" (click)="goUpdate()"
+            [hidden]="buttons.indexOf('circle.update')==-1">修改</button>
+            <button class="btn btn-outline-info btn-sm" data-toggle="modal" (click)="delete()"
+            [hidden]="buttons.indexOf('circle.delete')==-1">删除
+            </button>
+            <button class="btn btn-outline-info btn-sm" (click)="goCirclePerson()">
+              查看圈内人员
+            </button>
+          </div>
+      </div>
+
+      <div class="card">
+
+        <div class="card-body">
+          <div *ngIf="!loadMsgOrgGrid.loaded">
+            {{loadMsgOrgGrid.message}}
+          </div>
+          <table class="table table-responsive table-hover table-outline" *ngIf="loadMsgOrgGrid.loaded">
+            <thead class="thead-default">
+            <tr>
+              <th></th>
+              <th>圈子名称</th>
+              <th>可容纳人</th>
+              <th>删除状态</th>
+              <th>备注</th>
+              <th>创建时间</th>
+              <th>更新时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let circle of circles">
+              <td>
+                <input id="checkbox{{circle.id}}" name="radio" type="radio"
+                       (click)="recordCheck(circle)"/>
+              </td>
+              <td>{{circle.name}}</td>
+              <td>{{circle.accommodate}}</td>
+              <td>{{circle.omit==true?'已删除':'未删除'}}</td>
+              <td>{{circle.remark}}</td>
+              <td>{{circle.createTime}}</td>
+              <td>{{circle.updateTime}}</td>
+            </tr>
+
+            </tbody>
+          </table>
+          <page [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

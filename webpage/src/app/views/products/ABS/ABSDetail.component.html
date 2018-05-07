@@ -1,0 +1,127 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header" (click)="flag=!flag">
+            产品详情
+            <div class="pull-right">
+              <i class="fa fa-caret-left fa-lg" [hidden]="flag"></i>
+              <i class="fa fa-caret-down fa-lg" [hidden]="!flag"></i>
+            </div></div>
+          <div class="card-body animated" [ngClass]="{'hide':!flag,'fadeIn':flag}" [hidden]="flag">
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">产品名称</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.name" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">场所</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.placeDesc" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">是否结构化</label>
+                          <input class="col-md-3" type="text" class="form-control" [value]="abs.structurization?'是':'否'" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">发布人所属公司</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.orgName" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">产品状态</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.stateDesc" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">资金规模</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.amount+abs.amountUnitDesc" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">资金来源</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.capitalSource" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">缴款日</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.paymentTime" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">底层资产类别</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.underlyingAssetsTypeDesc" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <label class="col-md-3 form-control-label" for="input-small">备注</label>
+                          <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.remark" readonly>
+                        </div>
+                      </div>
+                    </div>
+                      <div class="form-group row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <label class="col-md-3 form-control-label" for="input-small">附件</label>
+                            <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.enclosure" readonly>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <label class="col-md-3 form-control-label" for="input-small">创建时间</label>
+                            <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.createTime" readonly>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <label class="col-md-3 form-control-label" for="input-small">更新时间</label>
+                            <input class="col-md-3" type="text" class="form-control" [(ngModel)]="abs.updateTime" readonly>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pull-right">
+                        <button type="button" class="btn btn-outline-primary btn-sm" [routerLink]="quoteId?['/order/list']:['/products/ABS/list']">
+                          返回
+                        </button>
+                      </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" (click)="flag=!flag">
+            报价列表
+            <div class="pull-right">
+              <i class="fa fa-caret-left fa-lg" [hidden]="!flag" ></i>
+              <i class="fa fa-caret-down fa-lg" [hidden]="flag" ></i>
+            </div>
+
+          </div>
+          <div class="card-body animated" [ngClass]="{'hide':flag,'fadeIn':!flag}" [hidden]="!flag">
+            <productOfferTemplate [productId]="productId" [quoteId]="quoteId"></productOfferTemplate>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,65 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col-md-4">
+              <div class="input-group">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn">会员名称：&nbsp;&nbsp;&nbsp;</button>
+                    </span>
+                <input type="text" class="form-control" placeholder="请选择会员用户" readonly (click)="selectMember()" [ngModel]="username">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                                      <span class="input-group-btn">
+                                        <button type="button" class="btn">买卖类型：</button>
+                                      </span>
+                <select id="lockup" name="lockup" class="form-control" [(ngModel)]="buyFlag" (change)="changeBuyer()" [disabled]="!username">
+                  <option value="">请先选择会员</option>
+                  <option value="1">资金方</option>
+                  <option value="2">资产方</option>
+                  <option value="3">资金方或资产方</option>                  
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header">
+          <button type="button" class="btn btn-outline-info btn-sm" [ladda]='isLoading' (click)="query()">查询</button>
+          <button type="reset" class="btn btn-outline-info btn-sm" (click)="reset()">重置</button>
+        </div>
+      </div>
+      <div class="card">
+
+        <div class="card-body">
+          <table class="table table-responsive table-hover table-outline">
+            <thead class="thead-default">
+            <tr>
+              <th>资金方姓名</th>
+              <th>资产方姓名</th>
+              <th>产品类型</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{order.orderInfo.memberMoney.name}}</td>
+              <td>{{order.orderInfo.memberAssets.name}}</td>
+              <td>{{order.productTypeDesc}}</td>
+              <td>
+                <a
+                  [routerLink]="['/order/detail',order.orderInfo.id+','+order.orderInfo.productId+','+order.productType+','+order.quoteVo.id]">订单详情</a>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+          <page *ngIf="loadMsgGrid.loaded" [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

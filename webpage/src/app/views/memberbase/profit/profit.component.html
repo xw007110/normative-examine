@@ -1,0 +1,54 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="card-body">
+      <div class="card">
+        <div class="card-header">
+          <button type="button" class="btn btn-outline-info btn-sm"
+            (click)="lockup()" [hidden]="buttons.indexOf('base.member.profit.lock')==-1">
+            {{!selectedProfit?'锁定': selectedProfit.lockup?'解锁':'锁定'}}
+          </button>
+
+          <button class="btn btn-outline-info btn-sm" (click)="goUpdate()"
+           [hidden]="buttons.indexOf('base.member.profit.update')==-1">修改</button>
+
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div *ngIf="!loadMsgGrid.loaded">
+            {{loadMsgGrid.message}}
+          </div>
+          <table class="table table-responsive table-hover table-outline">
+            <thead class="thead-default">
+              <tr>
+                <th></th>
+                <th>类型</th>
+                <th>权益值</th>
+                <th>状态</th>
+                <th>备注</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="loadMsgGrid.loaded">
+              <tr *ngFor="let profit of profits">
+                <td>
+                  <input id="checkbox{{profit.id}}" name="radio" type="radio" (click)="recordCheck(profit)" />
+                </td>
+                <td>{{profit.typeDesc}}</td>
+                <td>{{profit.parameter}}</td>
+                <td>{{profit.lockup==true?'锁定':'解锁'}}</td>
+                <td>{{profit.remark}}</td>
+                <td>{{profit.createTime}}</td>
+                <td>{{profit.updateTime}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

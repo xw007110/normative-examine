@@ -1,0 +1,128 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header" (click)="flag=!flag">
+          产品详情
+          <div class="pull-right">
+            <i class="fa fa-caret-left fa-lg" [hidden]="flag" ></i>
+            <i class="fa fa-caret-down fa-lg" [hidden]="!flag" ></i>
+          </div>
+        </div>
+        <div class="card-body animated" [ngClass]="{'hide':!flag,'fadeIn':flag}" [hidden]="flag">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">产品名称</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="trustPlan.name" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">发行机构</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="trustPlan.issuer" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">信托计划类型</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="trustPlan.trustPlanTypeDesc"
+                           readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">投资类型</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="trustPlan.investmentTypeDesc"
+                           readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">运作时间</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="trustPlan.operationTime"
+                           readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">产品期限</label>
+                    <input class="col-md-3" type="text" class="form-control"
+                           [value]="trustPlan.dateStart+trustPlan.dateUnitDesc+'-'+trustPlan.dateEnd+trustPlan.dateUnitDesc" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">收益率</label>
+                    <input class="col-md-3" type="text" class="form-control" [value]="(trustPlan.interestrateValueType=='1'?trustPlan.interestrateStart+'%':trustPlan.interestrateStart+'-'+trustPlan.interestrateEnd+'%')"
+                           readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                      <label class="col-md-3 form-control-label" for="input-small">总规模</label>
+                      <input class="col-md-3" type="text" class="form-control"
+                             [(ngModel)]="trustPlan.amount+trustPlan.amountUnitDesc" readonly>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">销售金额</label>
+                    <input class="col-md-3" type="text" class="form-control"
+                           [(ngModel)]="trustPlan.salesAmount+trustPlan.salesAmountUnitDesc" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">底层资产描述</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="trustPlan.underlyingAssets"
+                           readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">附件</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="trustPlan.enclosure" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="pull-right">
+            <button type="button" class="btn btn-outline-primary btn-sm" [routerLink]="quoteId?['/order/list']:['/products/trustPlan/list']">
+              返回
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" (click)="flag=!flag">
+          报价列表
+          <div class="pull-right">
+            <i class="fa fa-caret-left fa-lg" [hidden]="!flag" ></i>
+            <i class="fa fa-caret-down fa-lg" [hidden]="flag" ></i>
+          </div>
+
+        </div>
+        <div class="card-body animated" [ngClass]="{'hide':flag,'fadeIn':!flag}" [hidden]="!flag">
+          <productOfferTemplate [productId]="productId" [quoteId]="quoteId"></productOfferTemplate>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

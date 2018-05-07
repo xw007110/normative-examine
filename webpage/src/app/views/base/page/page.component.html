@@ -1,0 +1,25 @@
+<!--分页组建-->
+<ul class="pagination" *ngIf="pageParams.totalNum>0">
+
+  <li class="page-item">
+    <button class="page-link" (click)="changePage(pageParams.curPage-1)"
+            [disabled]="pageParams.curPage==1">上一页
+    </button>
+  </li>
+  <li class="page-item">
+    <button class="page-link" [class.selected]="pageParams.curPage==page.pageNo"
+            [disabled]="pageParams.curPage==page.pageNo"
+            (click)="changePage(page.pageNo)"
+            *ngFor="let page of getPageList(pageParams)">{{page.pageNo}}
+    </button>
+  </li>
+  <li class="page-item">
+    <button class="page-link" (click)="changePage(pageParams.curPage-(-1))"
+            [disabled]="pageParams.curPage==pageParams.totalPage">下一页
+    </button>
+  </li>
+  <li class="pull-right text-sm">总计 {{pageParams.totalNum}} 条，第 {{pageParams.curPage}} / {{pageParams.totalPage}} 页</li>
+</ul>
+<ul class="pagination" *ngIf="pageParams.totalNum==0">
+  <li class="pull-right text-sm">暂无数据</li>
+</ul>

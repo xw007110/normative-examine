@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> 机构新增
+      </div>
+      <form novalidate (ngSubmit)="doAdd(form)" [formGroup]="form">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group row">
+                <label class="col-md-2 form-control-label" for="parentName">上级机构</label>
+                <div class="col-md-5">
+                  <input id="parentName" type="text" class="form-control" placeholder="请选择上级机构" name="parentName"
+                         formControlName="parentName" readonly
+                         (click)="selectOrg()">
+                </div>
+                <div class="alert-danger form-control col-md-5" role="alert"
+                     [hidden]="form.get('parentName').valid || form.get('parentName').untouched">
+                  <span [hidden]="!form.hasError('required','parentName')">机构名称必填</span>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 form-control-label" for="code">机构编号</label>
+                <div class="col-md-5">
+                  <input type="text" id="code" name="code" class="form-control" placeholder="请输入机构编号"
+                         formControlName="code">
+
+                </div>
+                <div class="alert-danger form-control col-md-5" role="alert"
+                     [hidden]="form.get('code').valid || form.get('code').untouched">
+                  <span [hidden]="!form.hasError('required','code')">机构编号必填</span>
+                  <span [hidden]="!form.hasError('pattern','code')">请输入数字</span>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 form-control-label" for="name">机构名称</label>
+                <div class="col-md-5">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="请输入机构名称"
+                         formControlName="name">
+                </div>
+                <div class="alert-danger form-control col-md-5" role="alert"
+                     [hidden]="form.get('name').valid || form.get('name').untouched">
+                  <span [hidden]="!form.hasError('required','name')">机构名称必填</span>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 form-control-label" for="type">机构类型</label>
+                <div class="col-md-5">
+                    <input type="text" id="name" name="name" placeholder="运管机构" class="form-control" value="1"
+                    formControlName="type" readonly>
+                  <!-- <select id="type" name="type" class="form-control" formControlName="type" readonly>                   
+                    <option value="1" [selected]="true">运管机构</option>
+                  </select> -->
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 form-control-label" for="remark">描述</label>
+                <div class="col-md-5">
+                  <input type="text" id="remark" name="remark" class="form-control" formControlName="remark">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/.row-->
+          <div class="card-body">
+            <button type="button" class="btn btn-outline-info btn-sm" (click)="reset()">重置</button>
+            <button type="submit" class="btn btn-outline-info btn-sm" [disabled]="form.invalid">提交</button>
+            <button type="button" class="btn btn-outline-info btn-sm" [routerLink]="['/base/organization/list']">返回
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

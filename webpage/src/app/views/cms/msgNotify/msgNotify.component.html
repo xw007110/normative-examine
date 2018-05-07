@@ -1,0 +1,59 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="card-body">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col-md-4">
+              <div class="input-group">
+                                      <span class="input-group-btn">
+                                        <button type="button" class="btn">类型：</button>
+                                      </span>
+                <select id="select" name="select" class="form-control" [(ngModel)]="msgNotifyParams.type">
+                  <option value="">所有</option>                 
+                  <option value="1">系统消息</option>
+                  <option value="2">产品消息</option>
+                  <option value="3">社交消息</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header">
+          <button class="btn btn-outline-info btn-sm" [ladda]='isLoading' (click)="query()">查询</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div *ngIf="!loadMsgOrgGrid.loaded">
+            {{loadMsgOrgGrid.message}}
+          </div>
+          <table class="table table-responsive table-hover table-outline" *ngIf="loadMsgOrgGrid.loaded">
+            <thead>
+              <tr>
+                <th>通知类型</th>
+                <th>通知内容</th>
+                <th>消息通知状态</th>
+                <th>创建时间</th>
+                <th>更新时间</th>                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let msgNotify of msgNotifys">
+                
+                <td>{{msgNotify.type==1?'系统消息':msgNotify.type==2?'产品消息':'社交消息'}}</td>
+                <td>{{msgNotify.msg}}</td>
+                <td>{{msgNotify.state}}</td>
+                <td>{{msgNotify.createTime}}</td>  
+                <td>{{msgNotify.updateTime}}</td>                                
+              </tr>
+
+            </tbody>
+          </table>
+          <page [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

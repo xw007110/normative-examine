@@ -1,0 +1,158 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header" (click)="flag=!flag">
+          产品详情
+          <div class="pull-right">
+            <i class="fa fa-caret-left fa-lg" [hidden]="flag" ></i>
+            <i class="fa fa-caret-down fa-lg" [hidden]="!flag" ></i>
+          </div>
+        </div>
+        <div class="card-body animated" [ngClass]="{'hide':!flag,'fadeIn':flag}" [hidden]="flag">
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">券种</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.quanzhongDesc" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">发行期限</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.dateStart+interestDebt.dateUnitDesc" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">票面利率</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.couponRate" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">手续费</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.commission" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">招标时间</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.biddingTime" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">停止投标</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.stopBidding" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">债券名称</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.name" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">债券代码</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.code" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">上市市场</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.marketDesc" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">招标方式</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.biddingMethodDesc" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">发行规模</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.amount+interestDebt.amountUnitDesc" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">缴款日</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.paymentDate" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">上市日</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.listingDate" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">起息日</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.valueDay" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label">预测区间起</label>
+                    <input class="col-md-3" type="text" class="form-control" [value]="interestDebt.forecastStart+'-'+interestDebt.forecastEnd+'%'" readonly>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label">申购建议</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.advise" readonly>
+                  </div>
+                </div>
+              </div>
+                <div class="form-group row">
+                    
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <label class="col-md-3 form-control-label">备注:</label>
+                        <input class="col-md-3" type="text" class="form-control" [(ngModel)]="interestDebt.remark" readonly>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pull-right">
+                    <button type="button" class="btn btn-outline-primary btn-sm" [routerLink]="quoteId?['/order/list']:['/products/interestDebt/list']">
+                      返回
+                    </button>
+                  </div>
+        </div>
+
+      </div>
+      <div class="card">
+        <div class="card-header" (click)="flag=!flag">
+          报价列表
+          <div class="pull-right">
+            <i class="fa fa-caret-left fa-lg" [hidden]="!flag" ></i>
+            <i class="fa fa-caret-down fa-lg" [hidden]="flag" ></i>
+          </div>
+
+        </div>
+        <div class="card-body animated" [ngClass]="{'hide':flag,'fadeIn':!flag}" [hidden]="!flag">
+          <productOfferTemplate [productId]="productId" [quoteId]="quoteId"></productOfferTemplate>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

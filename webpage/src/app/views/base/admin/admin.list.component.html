@@ -1,0 +1,120 @@
+<div class="row animated fadeIn">
+  <div [ngClass]="{'leftSmall':toggleOrgFlag,'col-md-3':!toggleOrgFlag}">
+    <div class="card">
+      <div class="card-header" (click)="toggleOrgFlag=!toggleOrgFlag">
+        <i class="fa fa-align-justify"></i> 所有机构
+      </div>
+      <div class="card-body">
+        <orgTree (queryOrgList)="queryOrgList($event)" [type]="orgType"></orgTree>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="{'rightStrong':toggleOrgFlag,'col-md-9':!toggleOrgFlag}">
+      <div class="card">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-md-4">
+            <div class="input-group">
+                                      <span class="input-group-btn">
+                                        <button type="button" class="btn">锁定状态：</button>
+                                      </span>
+              <select id="lockup" name="lockup" class="form-control" [(ngModel)]="adminParams.lockup">
+                <option value="">请选择</option>
+                <option value="true">锁定</option>
+                <option value="false">解锁</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="input-group">
+                                       <span class="input-group-btn">
+                                        <button type="button" class="btn">禁用状态：</button>
+                                      </span>
+              <select id="select" name="select" class="form-control" [(ngModel)]="adminParams.forbidden">
+                <option value="">请选择</option>
+                <option value="true">已禁用</option>
+                <option value="false">已启用</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="input-group">
+                                      <span class="input-group-btn">
+                                        <button type="button" class="btn">用户名：&nbsp;&nbsp;&nbsp;</button>
+                                      </span>
+              <input type="text" id="name" name="name" class="form-control" placeholder="请输入用户名"
+                     [(ngModel)]="adminParams.username">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-header">
+          <button type="button" class="btn btn-outline-info btn-sm" [ladda]='isLoading' (click)="query()">查询</button>
+          <button type="button" [hidden]="buttons.indexOf('basics.admin.add')==-1"
+                  class="btn btn-outline-info btn-sm" [routerLink]="['/base/admin/add']">增加
+          </button>
+          <button class="btn btn-outline-info btn-sm" [hidden]="buttons.indexOf('basics.admin.update')==-1||(seletedAdmin&&seletedAdmin.person.type==='3')" (click)="goUpdate()" >修改</button>
+          
+          <button type="button" [hidden]="buttons.indexOf('basics.admin.delete')==-1||(seletedAdmin&&seletedAdmin.systemUser)"
+                  class="btn btn-outline-info btn-sm" data-toggle="modal" (click)="delete()">删除
+          </button>
+          <button type="button" [hidden]="buttons.indexOf('basics.admin.lock')==-1||(seletedAdmin&&seletedAdmin.systemUser)"
+                  class="btn btn-outline-info btn-sm" (click)="lockup()">
+            {{!seletedAdmin?'锁定': seletedAdmin.lockup?'解锁':'锁定'}}
+          </button>
+          <button type="button" [hidden]="buttons.indexOf('basics.admin.freeze')==-1||(seletedAdmin&&seletedAdmin.systemUser)"
+                  class="btn btn-outline-info btn-sm" (click)="forbidden()">
+            {{!seletedAdmin?'禁用': seletedAdmin.forbidden?'启用':'禁用'}}
+          </button>
+          <button type="button" [hidden]="buttons.indexOf('basics.admin.resetPassword')==-1"
+                  class="btn btn-outline-info btn-sm" data-toggle="modal" (click)="goResetPwd()">重置密码
+          </button>
+          <button type="button" [hidden]="buttons.indexOf('basics.admin.authentication')==-1||(seletedAdmin&&seletedAdmin.systemUser)"
+                  class="btn btn-outline-info btn-sm" data-toggle="modal" (click)="authorization()">授权
+          </button>
+        </div>
+    </div>
+    <div class="card">
+
+      <div class="card-body">
+        <div *ngIf="!loadMsgAdminGrid.loaded">
+          {{loadMsgAdminGrid.message}}
+        </div>
+        <table class="table table-responsive table-hover table-outline" *ngIf="loadMsgAdminGrid.loaded">
+          <thead class="thead-default">
+          <tr>
+            <th></th>
+            <th>登陆名</th>
+            <th>锁定状态</th>
+            <th>删除状态</th>
+            <th>禁用状态</th>
+            <!--<th>人员ID</th>-->
+            <th>人员名称</th>
+            <th>创建时间</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let admin of admins">
+            <td>
+              <input id="checkbox{{admin.id}}" name="radio" type="radio"
+                     (click)="recordCheck(admin)"/>
+            </td>
+            <td>{{admin.username}}</td>
+            <td>{{admin.lockup==true?'已锁定':'已解锁'}}</td>
+            <td>{{admin.omit==true?'已删除':'未删除'}}</td>
+            <td>{{admin.forbidden==true?'已禁用':'已启用'}}</td>
+            <!--<td>{{admin.person.id}}</td>-->
+            <td>{{admin.person.name}}</td>
+            <td>{{admin.createTime}}</td>
+          </tr>
+          </tbody>
+        </table>
+        <page *ngIf="loadMsgAdminGrid.loaded" [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+      </div>
+    </div>
+      </div>
+  </div>
+</div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>

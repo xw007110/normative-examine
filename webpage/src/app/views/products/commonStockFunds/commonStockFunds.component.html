@@ -1,0 +1,48 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class='no-padding-right' [ngClass]="{'leftSmall':toggleFlag,'col-md-5':!toggleFlag}">
+      <productTemplate [productState]="productState" [toggleFlag]="toggleFlag" [isLoading]="isLoading"
+                       [buttonPermission]="buttonPermission" [itemList]="itemList" (returnEvent)="getByParam($event)"
+                       (returnUpdateStateEvent)="updateState($event)"
+                       (returnToggleEvent)="toogle($event)"></productTemplate>
+    </div>
+    <div class='no-padding-right' [ngClass]="{'rightStrong':toggleFlag,'col-md-7':!toggleFlag}">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-responsive table-hover table-outline">
+            <thead class="thead-default">
+            <tr>
+              <th></th>
+              <th>金额</th>
+              <th>期限</th>
+              <th>期望收益率</th>
+              <th item-width="20%">目标资产</th>
+              <th>产品状态</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let s of commonStockFunds">
+              <td>
+                <input name="radio" type="radio"
+                       (click)="recordCheck(s)"/>
+              </td>
+              <td>{{s.amount+s.amountUnitDesc}}</td>
+              <td>{{(s.dateValueType=='1'?s.dateStart+s.dateUnitDesc:s.dateStart+'-'+s.dateEnd+s.dateUnitDesc)}}</td>
+              <td>{{(s.earningsValueType=='1'?s.earningsStart+'%':s.earningsStart+'-'+s.earningsEnd+'%')}}</td>
+              <td>{{s.bondTypeStr}}</td>
+              <td>{{s.stateDesc}}</td>
+              <td>
+                <a [routerLink]="['/products/commonStockFunds/detail',s.id]">详情
+                </a>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+          <page *ngIf="loadMsgGrid.loaded" [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

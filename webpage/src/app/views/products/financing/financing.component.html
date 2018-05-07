@@ -1,0 +1,48 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class='no-padding-right' [ngClass]="{'leftSmall':toggleFlag,'col-md-5':!toggleFlag}">
+      <productTemplate [productState]="productState" [toggleFlag]="toggleFlag" [isLoading]="isLoading"
+                       [buttonPermission]="buttonPermission" [itemList]="itemList" (returnEvent)="getByParam($event)"
+                       (returnUpdateStateEvent)="updateState($event)"
+                       (returnToggleEvent)="toogle($event)"></productTemplate>
+    </div>
+    <div class='no-padding-right' [ngClass]="{'rightStrong':toggleFlag,'col-md-7':!toggleFlag}">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-responsive table-hover table-outline">
+            <thead class="thead-default">
+            <tr>
+              <th></th>
+              <th>产品性质</th>
+              <th>金额</th>
+              <th>收益率</th>
+              <th>期限</th>
+              <th>产品状态</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let f of financing">
+              <td>
+                <input name="radio" type="radio"
+                       (click)="recordCheck(f)"/>
+              </td>
+              <td>{{f.natureDesc}}</td>
+              <td>{{f.amount+f.amountUnitDesc}}</td>
+              <td>{{(f.interestrateValueType=='1'?f.interestrateStart+'%':f.interestrateStart+'-'+f.interestrateEnd+'%')}}</td>
+              <td>{{(f.dateValueType=='1'?f.dateStart+f.dateUnitDesc:f.dateStart+'-'+f.dateEnd+f.dateUnitDesc)}}</td>
+              <td>{{f.stateDesc}}</td>
+              <td>
+                <a [routerLink]="['/products/financing/detail',f.id]">详情
+                </a>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+          <page *ngIf="loadMsgGrid.loaded" [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

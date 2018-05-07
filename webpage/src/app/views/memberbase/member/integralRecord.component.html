@@ -1,0 +1,73 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> 积分详情
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr>
+                  <th>事件类型</th>
+                  <th>增加/减少</th>
+                  <th>分数</th>
+                  <th>创建时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let member of members">
+                  <td>{{member.ruleTypeDesc}}</td>
+                  <td>{{member.directionDesc}}</td>
+                  <td>{{member.score}}</td>
+                  <td>{{member.createTime}}</td> 
+                </tr>
+
+      </tbody>
+    </table>
+          <!-- <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">事件类型</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="member.ruleTypeDesc" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">增加/减少</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="member.directionDesc" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">分数</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="member.score" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <label class="col-md-3 form-control-label" for="input-small">创建时间</label>
+                    <input class="col-md-3" type="text" class="form-control" [(ngModel)]="member.createTime" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> -->
+          <!--/.row-->
+        </div>
+        <div class="card-footer">    
+          <button type="button" class="btn btn-outline-primary btn-sm" [routerLink]="['/memberbase/member/list']">返回</button>
+          </div>  
+      </div>
+    </div>
+  </div>
+</div>

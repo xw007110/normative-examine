@@ -1,0 +1,9 @@
+<!--机构树组建-->
+<div *ngIf="!loadMsgOrgTree.loaded">
+  {{loadMsgOrgTree.message}}
+</div>
+<p-tree *ngIf="loadMsgOrgTree.loaded" [value]="orgTree" selectionMode="single" [(selection)]="selectedNode"
+        (onNodeSelect)="queryOrgData()"
+        (onNodeExpand)="loadOrgChildren($event)" [style]="{'width':'100%','border':'none'}">
+  >
+</p-tree>

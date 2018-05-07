@@ -1,0 +1,55 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="card-body">
+      <div class="card">
+        <div class="card-header">
+          <button type="button" class="btn btn-outline-info btn-sm"
+            (click)="lockup()" [hidden]="buttons.indexOf('base.member.grade.lock')==-1">
+            {{!selectedGrade?'锁定': selectedGrade.lockup?'解锁':'锁定'}}
+          </button>
+
+          <button class="btn btn-outline-info btn-sm" (click)="goUpdate()"
+           [hidden]="buttons.indexOf('base.member.grade.update')==-1">修改</button>
+          <button class="btn btn-outline-info btn-sm" (click)="goProfit()"
+          [hidden]="buttons.indexOf('base.member.grade.profit')==-1">权益设置</button>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div *ngIf="!loadMsgGrid.loaded">
+            {{loadMsgGrid.message}}
+          </div>
+          <table class="table table-responsive table-hover table-outline">
+            <thead class="thead-default">
+              <tr>
+                <th></th>
+                <th>等级名称</th>
+                <th>积分</th>
+                <th>状态</th>
+                <th>描述</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="loadMsgGrid.loaded">
+              <tr *ngFor="let grade of grades">
+                <td>
+                  <input id="checkbox{{grade.id}}" name="radio" type="radio" (click)="recordCheck(grade)" />
+                </td>
+                <td>{{grade.name}}</td>
+                <td>{{grade.score}}</td>
+                <td>{{grade.lockup==true?'锁定':'解锁'}}</td>
+                <td>{{grade.remark}}</td>
+                <td>{{grade.createTime}}</td>
+                <td>{{grade.updateTime}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

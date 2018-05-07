@@ -1,0 +1,84 @@
+<div class="row animated fadeIn">
+  <div [ngClass]="{'leftSmall':toggleOrgFlag,'col-md-3':!toggleOrgFlag}">
+    <div class="card">
+      <div class="card-header" (click)="toggleOrgFlag=!toggleOrgFlag">
+        <i class="fa fa-align-justify"></i> 所属机构
+      </div>
+      <div class="card-body">
+        <div *ngIf="!loadMsgOrgTree.loaded">
+          {{loadMsgOrgTree.message}}
+        </div>
+        <p-tree *ngIf="loadMsgOrgTree.loaded" [value]="orgTree" selectionMode="single" [(selection)]="selectedNode"
+                (onNodeSelect)="query()"
+                (onNodeExpand)="loadOrgChildren($event)" [style]="{'width':'100%','border':'none'}">
+          >
+        </p-tree>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="{'rightStrong':toggleOrgFlag,'col-md-9':!toggleOrgFlag}">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-md-8">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn">登录名：</button>
+              </span>
+              <input type="text" name="name" class="form-control" placeholder="请输入人员名称" [(ngModel)]="memberParams.username">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="input-group">
+              <button class="btn btn-outline-info btn-sm pull-right" (click)="query()">查询</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div *ngIf="!loadMsgMemberGrid.loaded">
+          {{loadMsgMemberGrid.message}}
+        </div>
+        <table class="table table-responsive table-hover table-outline" *ngIf="loadMsgMemberGrid.loaded">
+          <thead class="thead-default">
+          <tr>
+            <th></th>
+            <th>姓名</th>
+            <th>登录名</th>
+            <th>手机号</th>
+            <th>锁定状态</th>
+            <th>删除状态</th>
+            <th>禁用状态</th>
+            <th>认证状态</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let member of members">
+            <td>
+              <input id="checkbox{{member.id}}" name="radio" type="radio"
+                     (click)="recordCheck(member)"/>
+            </td>
+            <td>{{member.person.name}}</td>
+            <td>{{member.username}}</td>
+            <td>{{member.mobile}}</td>
+            <td>{{member.lockup==true?'已锁定':'已解锁'}}</td>
+            <td>{{member.omit==true?'已删除':'未删除'}}</td>
+            <td>{{member.forbidden==true?'已停用':'已启用'}}</td>
+            <td>{{member.authentication==true?'已认证':'未认证'}}</td>
+
+          </tr>
+
+          </tbody>
+        </table>
+
+        <page [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+      </div>
+    </div>
+  </div>
+</div>

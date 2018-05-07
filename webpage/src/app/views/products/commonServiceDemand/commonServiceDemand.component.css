@@ -1,0 +1,12 @@
+.selected-group{
+background: blue;
+}
+
+#queryCondition{
+    height: 110px;
+    overflow: hidden;
+}
+
+.more{
+    float: right;
+}

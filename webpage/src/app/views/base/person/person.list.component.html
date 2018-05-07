@@ -1,0 +1,103 @@
+<div class="row animated fadeIn">
+  <div [ngClass]="{'leftSmall':toggleOrgFlag,'col-md-3':!toggleOrgFlag}">
+    <div class="card">
+      <div class="card-header" (click)="toggleOrgFlag=!toggleOrgFlag">
+        <i class="fa fa-align-justify"></i> 所属机构
+      </div>
+      <div class="card-body">
+        <orgTree (queryOrgList)="queryOrgList($event)" [type]="orgType"></orgTree>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="{'rightStrong':toggleOrgFlag,'col-md-9':!toggleOrgFlag}">
+    <div class="card">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col-md-4">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <button type="button" class="btn">锁定状态：</button>
+                </span>
+                <select id="lockup" name="lockup" class="form-control" [(ngModel)]="personParams.lockup">
+                  <option value="">请选择</option>
+                  <option value="true">锁定</option>
+                  <option value="false">解锁</option>
+                </select>
+              </div>
+            </div>
+            <!-- <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn">人员类型：</button>
+              </span>
+              <select name="type" class="form-control" [(ngModel)]="personParams.type">
+                <option value=""></option>
+                <option value="1">平台用户</option>
+                <option value="2">会员用户</option>
+              </select>
+            </div>
+          </div> -->
+            <div class="col-md-4">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <button type="button" class="btn">人员名称：</button>
+                </span>
+                <input type="text" name="name" class="form-control" placeholder="请输入人员名称" [(ngModel)]="personParams.name">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-header">
+          <button class="btn btn-outline-info btn-sm" [ladda]='isLoading' (click)="query()">查询</button>
+          <button class="btn btn-outline-info btn-sm" [hidden]="buttons.indexOf('basics.person.add')==-1" [routerLink]="['/base/person/add']">增加</button>
+          <button class="btn btn-outline-info btn-sm" [hidden]="buttons.indexOf('basics.person.update')==-1||(selectedPerson&&selectedPerson.type==='3')"
+            (click)="goUpdate()">修改</button>
+          <button class="btn btn-outline-info btn-sm" [hidden]="buttons.indexOf('basics.person.delete')==-1||(selectedPerson&&selectedPerson.type==='3')"
+            data-toggle="modal" (click)="delete()">删除</button>
+          <button class="btn btn-outline-info btn-sm" [hidden]="buttons.indexOf('basics.person.lock')==-1||(selectedPerson&&selectedPerson.type==='3')"
+            (click)="lockup()">
+            {{!selectedPerson?'锁定': selectedPerson.lockup?'解锁':'锁定'}}
+          </button>
+        </div>
+      </div>
+      <div class="card">
+
+        <div class="card-body">
+          <div *ngIf="!loadMsgPersonGrid.loaded">
+            {{loadMsgPersonGrid.message}}
+          </div>
+          <table *ngIf="loadMsgPersonGrid.loaded" class="table table-responsive table-hover table-outline">
+            <thead class="thead-default">
+              <tr>
+                <th></th>
+                <th>姓名</th>
+                <th>手机号</th>
+                <th>类型描述</th>
+                <th>锁定状态</th>
+                <th>所属机构</th>
+                <th>创建时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let person of persons">
+                <td>
+                  <input type="radio" name="radio" (click)="recordCheck(person)" />
+                </td>
+                <td>{{person.name}}</td>
+                <td>{{person.mobile}}</td>
+                <td>{{person.typeDesc}}</td>
+                <td>{{person.lockup==true?'已锁定':'已解锁'}}</td>
+                <td>{{person.organization&&person.organization.name}}</td>
+                <td>{{person.createTime}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <page *ngIf="loadMsgPersonGrid.loaded" [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <toaster-container [toasterconfig]="toasterconfig"></toaster-container>

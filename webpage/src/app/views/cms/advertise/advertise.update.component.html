@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+
+     
+        <div class="card-header">
+          <button type="submit" class="btn btn-outline-info btn-sm" (click)="doUpdate()">提交</button>
+          <button type="button" class="btn btn-outline-info btn-sm" [routerLink]="['/cms/advertise/list']">返回</button>
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col-md-6" [hidden]="advertise.type=='2'||advertise.type=='4'||advertise.type=='5'">
+              <div class="input-group">
+                <label class="col-md-2 form-control-label">图片</label>
+                <p-fileUpload  name="file" chooseLabel="选择" uploadLabel="上传" cancelLabel="取消" url="{{imageUrlPrefix}}" (onUpload)="onBasicUpload($event)"></p-fileUpload>
+                <input class="col-md-10 form-control" type="text" name="img"
+                       [(ngModel)]="advertise.img" [hidden]="true">
+                <!-- <div class="alert-danger form-control col-md-6" role="alert"
+                     [hidden]="form.get('img').valid">
+                  <span [hidden]="!form.hasError('required','img')">请选择并上传图片</span>
+                </div> -->
+              </div>
+            </div>
+            <div class="col-md-6" [hidden]="advertise.type=='2'||advertise.type=='3'||advertise.type=='4'||advertise.type=='5'">
+              <div class="input-group">
+                <label class="col-md-2 form-control-label" for="sort">序号</label>
+                <input class="col-md-10 form-control" type="text" id="sort" name="sort"
+                [(ngModel)]="advertise.sort">
+
+                <!-- <div class="alert-danger form-control col-md-5" role="alert"
+                     [hidden]="form.get('sort').valid || form.get('sort').untouched">
+                  <span [hidden]="!form.hasError('required','sort')">序号必填</span>
+                  <span [hidden]="!form.hasError('pattern','sort')">请输入正整数</span>                  
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6">
+              <div class="input-group">
+                <label class="col-md-2 form-control-label" for="type">广告类型</label>
+                <select class="col-md-10" id="type" name="type" class="form-control" [(ngModel)]="advertise.type"
+                        disabled>
+                  <option value=""></option>
+                  <option value="1">轮播</option>
+                  <option value="2">资讯</option>
+                  <option value="3">弹出</option>
+                  <option value="4">帮助文档</option>
+                  <option value="5">协议</option>
+                </select>
+
+                <!-- <div class="alert-danger form-control col-md-5" role="alert"
+                     [hidden]="form.get('type').valid || form.get('type').untouched">
+                  <span [hidden]="!form.hasError('required','type')">类型必填</span>
+                </div> -->
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input-group">
+                <label class="col-md-2 form-control-label" for="title">标题</label>
+                <input class="col-md-10" type="text" id="title" name="title" class="form-control" placeholder="序号越小，优先显示"
+                [(ngModel)]="advertise.title">
+                <!-- <div class="alert-danger form-control col-md-5" role="alert"
+                     [hidden]="form.get('title').valid || form.get('title').untouched">
+                  <span [hidden]="!form.hasError('required','title')">标题必填</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-12">
+              <div class="input-group">
+                <label class="col-md-1 form-control-label" for="content">内容</label>
+                <div class="col-md-10">
+                  <ueditor  id="content" [(ngModel)]="advertise.content" #full [loadingTip]="'加载中...'" [config]="{'charset':'utf-8','serverUrl':'32.51.152.202:8081/interbank-ws/api/'}"></ueditor>
+                </div>
+                <!-- <div class="alert-danger form-control col-md-1" role="alert" style="height:35px;line-height:35px;"
+                     [hidden]="form.get('content').valid || form.get('content').untouched">
+                  <span [hidden]="!form.hasError('required','content')">内容必填</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+    </div>
+  </div>
+</div>
+

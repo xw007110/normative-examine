@@ -1,0 +1,24 @@
+<div>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>角色编码</th>
+                    <th>角色名称</th>
+                    <th>角色类型</th>
+                    <th>创建时间</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let role of allRoles">
+                    <td>
+                      <input type="checkbox" (click)="recordCheck(role)" [checked]="role.checked"/>
+                    </td>
+                    <td>{{role.code}}</td>
+                    <td>{{role.name}}</td>
+                    <td>{{role.typeDesc}}</td>
+                    <td>{{role.createTime}}</td>
+                  </tr>
+                </tbody>
+              </table>
+</div>

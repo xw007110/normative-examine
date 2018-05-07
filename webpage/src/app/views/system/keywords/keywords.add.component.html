@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> 关键字新增
+      </div>
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-md-6">
+            <div class="input-group">
+              <label class="col-md-2 form-control-label" for="keyword">关键字</label>
+              <input class="col-md-10 form-control" type="text" id="keyword" name="keyword" placeholder="请输入关键字" [(ngModel)]="keywords.keyword">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/.row-->
+      <div class="card-body">
+        <button type="button" class="btn btn-outline-info btn-sm" (click)="reset()">重置</button>
+        <button type="button" class="btn btn-outline-info btn-sm" (click)="doAdd()">提交</button>
+        <button type="button" class="btn btn-outline-info btn-sm" [routerLink]="['/sys/keyword/list']">返回</button>
+      </div>
+
+    </div>
+  </div>
+</div>

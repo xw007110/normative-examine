@@ -1,0 +1,93 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="card-body">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group row" style="margin-bottom:0px;">
+
+              <div class="col-md-4">
+                  <div class="input-group">
+                                             <span class="input-group-btn">
+                                              <button type="button" class="btn">禁言状态：</button>
+                                            </span>
+                    <select id="select" name="select" class="form-control" [(ngModel)]="circlePersonParams.speak">
+                      <option value=""></option>
+                      <option value="true">禁言</option>
+                      <option value="false">解禁</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                                               <span class="input-group-btn">
+                                                <button type="button" class="btn">黑名单状态：</button>
+                                              </span>
+                      <select id="select" name="select" class="form-control" [(ngModel)]="circlePersonParams.blacklist">
+                        <option value=""></option>
+                        <option value="true">已加入黑名单</option>
+                        <option value="false">未加入黑名单</option>
+                      </select>
+                    </div>
+                  </div>
+          </div>
+        </div>
+        <div class="card-header">
+          <button type="button" class="btn btn-outline-info btn-sm" (click)="query()">查询</button>
+          <button class="btn btn-outline-info btn-sm" data-toggle="modal" (click)="delete()"
+                  [hidden]="buttons.indexOf('circle.remove')==-1">移除
+          </button>
+          <button class="btn btn-outline-info btn-sm" (click)="speak()" [hidden]="buttons.indexOf('circle.speak')==-1">
+              {{!selectedCirclePerson?'禁言': selectedCirclePerson.speak?'解言':'禁言'}}
+            </button>
+            <button type="button" class="btn btn-outline-info btn-sm" [routerLink]="['/circle/list']">返回</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div *ngIf="!loadMsgOrgGrid.loaded">
+            {{loadMsgOrgGrid.message}}
+          </div>
+          <table class="table table-responsive table-hover table-outline" *ngIf="loadMsgOrgGrid.loaded">
+            <thead class="thead-default">
+            <tr>
+              <th></th>
+              <th>会员登录名</th>
+              <th>会员姓名</th>
+              <th>昵称</th>
+              <th>手机号</th>
+              <th>机构名称</th>
+              <th>部门</th>
+              <th>职位</th>
+              <th>电话</th>
+              <th>禁言状态</th>
+              <th>黑名单状态</th>
+            </tr>
+            </thead>
+            <tbody *ngIf="loadMsgOrgGrid.loaded">
+            <tr *ngFor="let circlePerson of circlePersons">
+              <td>
+                <input id="checkbox{{circlePerson.id}}" name="radio" type="radio"
+                (click)="recordCheck(circlePerson)"/>
+              </td>
+              <td>{{circlePerson.username}}</td>
+              <td>{{circlePerson.name}}</td>
+              <td>{{circlePerson.nickname}}</td>
+              <td>{{circlePerson.mobile}}</td>
+              <td>{{circlePerson.orgName}}</td>
+              <td>{{circlePerson.department}}</td>
+              <td>{{circlePerson.job}}</td>
+              <td>{{circlePerson.tel}}</td>
+              <td>{{circlePerson.speak==true?'禁言':'解言'}}</td>
+              <td>{{circlePerson.blacklist==true?'已加入黑名单':'未加入黑名单'}}</td>
+
+            </tr>
+
+            </tbody>
+          </table>
+          <page [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="row animated fadeIn">
+  <!-- 机构树 -->
+  <div [ngClass]="{'leftSmall':toggleOrgFlag,'col-md-3':!toggleOrgFlag}">
+    <div class="card">
+      <div class="card-header" (click)="toggleOrgFlag=!toggleOrgFlag">
+        <i class="fa fa-align-justify"></i> 所有机构
+      </div>
+      <div class="card-body">
+        <orgTree (queryOrgList)="queryOrgList($event)" [type]="orgType"></orgTree>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="{'rightStrong':toggleOrgFlag,'col-md-9':!toggleOrgFlag}">
+      <div class="card">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn">锁定状态：</button>
+              </span>
+              <select id="lockup" name="lockup" class="form-control" [(ngModel)]="merchantParams.lockup">
+                <option value="">请选择</option>
+                <option value="true">锁定</option>
+                <option value="false">解锁</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn">机构名称：</button>
+              </span>
+              <input type="text" id="name" name="name" class="form-control" placeholder="请输入机构名称" [(ngModel)]="merchantParams.name">
+            </div>
+          </div>
+        </div>
+        <!--/.row-->
+
+
+      </div>
+      <div class="card-header">
+        <button type="button" class="btn btn-outline-info btn-sm" [ladda]='isLoading' (click)="query()">查询</button>
+        <button type="button" [hidden]="buttons.indexOf('member.org.add')==-1" class="btn btn-outline-info btn-sm" [routerLink]="['/memberbase/merchant/add']">增加</button>
+        <!-- <button type="button" [hidden]="buttons.indexOf('member.org.update')==-1" class="btn btn-outline-info btn-sm" (click)="goUpdate()">修改</button> -->
+        <button type="button" [hidden]="buttons.indexOf('member.org.delete')==-1" class="btn btn-outline-info btn-sm" (click)="delete()">删除</button>
+        <button type="button" [hidden]="buttons.indexOf('member.org.lock')==-1" class="btn btn-outline-info btn-sm" (click)="lockup()">
+          {{!seletedMer?'锁定': seletedMer.lockup?'解锁':'锁定'}}
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div *ngIf="!loadMsgOrgGrid.loaded">
+          {{loadMsgOrgGrid.message}}
+        </div>
+        <table class="table table-responsive table-hover table-outline" *ngIf="loadMsgOrgGrid.loaded">
+          <thead class="thead-default">
+            <tr>
+              <th></th>
+              <th>机构名称</th>
+              <th>类型描述</th>
+              <th>锁定状态</th>
+              <th>创建时间</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let merchant of merchants">
+              <td>
+                <input id="checkbox{{merchant.id}}" name="radio" type="radio" (click)="recordCheck(merchant)" />
+              </td>
+              <td>{{merchant.name}}</td>
+              <td>{{merchant.typeDesc}}</td>
+              <td>{{merchant.lockup==true?'已锁定':'已解锁'}}</td>
+              <td>{{merchant.createTime}}</td>
+
+
+            </tr>
+
+          </tbody>
+        </table>
+
+
+        <page [pageParams]="pageParams" (changeCurPage)="getPageData($event)"></page>
+      </div>
+    </div>
+      </div>
+  </div>
+</div>
