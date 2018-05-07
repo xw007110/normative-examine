@@ -1,4 +1,4 @@
-package com.wesite.normative.examine.systemConfig;
+package com.wesite.normative.examine.systemConfig.valid;
 
 import com.wesite.normative.examine.exception.ParameterException;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -50,7 +50,6 @@ public class ParameterCheckOption {
                 }
             }
         } catch (ParameterException e) {
-            logger.error("参数校验异常{}", e.getErrorMsg());
             throw new ParameterException(str);
         }
     }
@@ -97,22 +96,22 @@ public class ParameterCheckOption {
         if (check.notNull()) {
             if (field.get(args) == null
                     || "".equals(String.valueOf(field.get(args)))) {
-                return field.getName() + "不能为空";
+                return check.name() + "不能为空";
             }
         }
         if (check.maxLen() > 0 && (length > check.maxLen())) {
-            return field.getName() + "长度不能大于" + check.maxLen();
+            return check.name() + "长度不能大于" + check.maxLen();
         }
 
         if (check.minLen() > 0 && (length < check.minLen())) {
-            return field.getName() + "长度不能小于" + check.minLen();
+            return check.name() + "长度不能小于" + check.minLen();
         }
 
         if (check.numeric() && field.get(args) != null) {
             try {
                 new BigDecimal(String.valueOf(field.get(args)));
             } catch (Exception e) {
-                return field.getName() + "必须为数值型";
+                return check.name() + "必须为数值型";
             }
         }
         if (check.minNum() != -999999) {
@@ -120,10 +119,10 @@ public class ParameterCheckOption {
                 long fieldValue = Long
                         .parseLong(String.valueOf(field.get(args)));
                 if (fieldValue < check.minNum()) {
-                    return field.getName() + "必须不小于" + check.minNum();
+                    return check.name() + "必须不小于" + check.minNum();
                 }
             } catch (Exception e) {
-                return field.getName() + "必须为数值型，且不小于" + check.minNum();
+                return check.name() + "必须为数值型，且不小于" + check.minNum();
             }
         }
         return "";

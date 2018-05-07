@@ -1,4 +1,4 @@
-package com.wesite.normative.examine.systemConfig;
+package com.wesite.normative.examine.systemConfig.valid;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

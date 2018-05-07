@@ -1,9 +1,9 @@
 package com.wesite.normative.examine.utils;
 
-import com.wesite.normative.examine.contants.SystemMsgBase;
-
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * 工具类
@@ -27,4 +27,34 @@ public class CommonUtils {
         }
         return new HashMap<String, Object>(initialCapacity, 0.75f);
     }
+
+    /**
+     * 判断list 是否为空
+     * @param list list
+     * @return true 为空 false 不为空
+     */
+    public static boolean listEmpty(List list){
+        if(list == null || list.size() == 0){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 获取32位的UUID
+     * @return
+     */
+    public static String get32UUID(){
+        return UUID.randomUUID().toString().replace("-" , "");
+    }
+
+    /**
+     * 获取36位的UUID
+     * @return
+     */
+    public static String get36UUID(){
+        return UUID.randomUUID().toString();
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package com.wesite.normative.examine.entity;
 
 import com.wesite.normative.examine.contants.SystemMsgBase;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * 返回实体类父类
@@ -13,24 +14,28 @@ public class BaseResult {
     /**
      * success
      */
+    @ApiModelProperty(value="返回状态;true或false",name="success")
     private boolean success;
 
     /**
      * code
      */
+    @ApiModelProperty(value="返回状态码;0为成功，其他均为失败",name="code")
     private int code;
 
     /**
      * message
      */
+    @ApiModelProperty(value="返回信息",name="message")
     private String message;
 
     /**
      * data
      */
+    @ApiModelProperty(value="返回数据;object对象",name="message")
     private Object data;
 
-    public BaseResult(boolean success, int code, String message, Object data) {
+    private BaseResult(boolean success, int code, String message, Object data) {
         this.success = success;
         this.code = code;
         this.message = message;
@@ -43,6 +48,10 @@ public class BaseResult {
 
     public static BaseResult fail(int code, String msg, Object data) {
         return new BaseResult(false, code, msg, data);
+    }
+
+    public static BaseResult fail(int code, String msg){
+        return new BaseResult(false, code, msg, null);
     }
 
     public static BaseResult systemError(){

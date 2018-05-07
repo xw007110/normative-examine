@@ -1,5 +1,6 @@
 package com.wesite.normative.examine.utils;
 
+import com.wesite.normative.examine.contants.SystemContants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,11 +19,6 @@ import java.util.Random;
  * @create 2018/3/14 11:03
  **/
 public class RandomValidateCodeUtil  {
-    /**
-     * 放到session中的key
-     */
-    public static final String RANDOMCODEKEY= "RANDOMVALIDATECODEKEY";
-
     /**
      * 随机产生只有数字的字符串 private String
      */
@@ -101,8 +97,8 @@ public class RandomValidateCodeUtil  {
         }
         logger.info(randomString);
         //将生成的随机字符串保存到session中
-        session.removeAttribute(RANDOMCODEKEY);
-        session.setAttribute(RANDOMCODEKEY, randomString);
+        session.removeAttribute(SystemContants.SESSION_VERIFY_CODE_KEY);
+        session.setAttribute(SystemContants.SESSION_VERIFY_CODE_KEY, randomString);
         g.dispose();
         try {
             // 将内存中的图片通过流动形式输出到客户端

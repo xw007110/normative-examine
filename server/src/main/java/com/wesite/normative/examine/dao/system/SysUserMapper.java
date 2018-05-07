@@ -14,7 +14,6 @@ import java.util.List;
 * @author XuanMing
 * @create 2018/2/28 16:13
 **/
-@CacheConfig(cacheNames = "users")
 public interface SysUserMapper {
     long countByExample(SysUserExample example);
 
@@ -28,7 +27,6 @@ public interface SysUserMapper {
 
     List<SysUser> selectByExample(SysUserExample example);
 
-    @Cacheable
     SysUser selectByPrimaryKey(String guid);
 
     int updateByExampleSelective(@Param("record") SysUser record, @Param("example") SysUserExample example);

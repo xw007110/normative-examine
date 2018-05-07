@@ -1,4 +1,4 @@
-package com.wesite.normative.examine.systemConfig;
+package com.wesite.normative.examine.systemConfig.valid;
 
 /**
  * 校验参数check注解
@@ -36,4 +36,10 @@ public @interface Check {
      * 最小数值
      */
     public long minNum() default -999999;
+
+    /**
+     * 设置字段显示的名称
+     * @return
+     */
+    public String name();
 }

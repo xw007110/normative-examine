@@ -2,22 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wesite.normative.examine.dao.system.SysUserMapper">
   <resultMap id="BaseResultMap" type="com.wesite.normative.examine.entity.system.SysUser">
-    <id column="guid" jdbcType="VARCHAR" property="guid" />
-    <result column="user_name" jdbcType="VARCHAR" property="userName" />
-    <result column="login_account" jdbcType="VARCHAR" property="loginAccount" />
-    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
-    <result column="sex" jdbcType="CHAR" property="sex" />
-    <result column="birthday" jdbcType="DATE" property="birthday" />
-    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="login_time" jdbcType="DATE" property="loginTime" />
-    <result column="last_login_time" jdbcType="DATE" property="lastLoginTime" />
-    <result column="login_count" jdbcType="BIGINT" property="loginCount" />
-    <result column="role_guid" jdbcType="VARCHAR" property="roleGuid" />
-    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
-    <result column="create_time" jdbcType="DATE" property="createTime" />
-    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <id column="GUID" jdbcType="VARCHAR" property="guid" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="LOGIN_ACCOUNT" jdbcType="VARCHAR" property="loginAccount" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+    <result column="SEX" jdbcType="CHAR" property="sex" />
+    <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
+    <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="LOGIN_TIME" jdbcType="DATE" property="loginTime" />
+    <result column="LAST_LOGIN_TIME" jdbcType="DATE" property="lastLoginTime" />
+    <result column="LOGIN_COUNT" jdbcType="BIGINT" property="loginCount" />
+    <result column="ROLE_GUID" jdbcType="VARCHAR" property="roleGuid" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_TIME" jdbcType="DATE" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -78,8 +78,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    guid, user_name, login_account, user_password, sex, birthday, mobile, email, login_time, 
-    last_login_time, login_count, role_guid, create_by, create_time, update_by, update_time
+    GUID, USER_NAME, LOGIN_ACCOUNT, USER_PASSWORD, SEX, BIRTHDAY, MOBILE, EMAIL, LOGIN_TIME,
+    LAST_LOGIN_TIME, LOGIN_COUNT, ROLE_GUID, CREATE_BY, CREATE_TIME, UPDATE_BY, UPDATE_TIME
   </sql>
   <select id="selectByExample" parameterType="com.wesite.normative.examine.entity.system.SysUserExample" resultMap="BaseResultMap">
     select
@@ -87,7 +87,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from "sys_user"
+    from sys_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -104,85 +104,85 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
-    from "sys_user"
-    where guid = #{guid,jdbcType=VARCHAR}
+    from sys_user
+    where GUID = #{guid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from "sys_user"
-    where guid = #{guid,jdbcType=VARCHAR}
+    delete from sys_user
+    where GUID = #{guid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.wesite.normative.examine.entity.system.SysUserExample">
-    delete from "sys_user"
+    delete from sys_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.wesite.normative.examine.entity.system.SysUser">
-    insert into "sys_user" (guid, user_name, login_account, 
-      user_password, sex, birthday, 
-      mobile, email, login_time, 
-      last_login_time, login_count, role_guid, 
-      create_by, create_time, update_by, 
-      update_time)
-    values (#{guid,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{loginAccount,jdbcType=VARCHAR}, 
-      #{userPassword,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=DATE}, 
-      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{loginTime,jdbcType=DATE}, 
-      #{lastLoginTime,jdbcType=DATE}, #{loginCount,jdbcType=BIGINT}, #{roleGuid,jdbcType=VARCHAR}, 
-      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+    insert into sys_user (GUID, USER_NAME, LOGIN_ACCOUNT,
+    USER_PASSWORD, SEX, BIRTHDAY,
+    MOBILE, EMAIL, LOGIN_TIME,
+    LAST_LOGIN_TIME, LOGIN_COUNT, ROLE_GUID,
+    CREATE_BY, CREATE_TIME, UPDATE_BY,
+    UPDATE_TIME)
+    values (#{guid,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{loginAccount,jdbcType=VARCHAR},
+    #{userPassword,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=DATE},
+    #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{loginTime,jdbcType=DATE},
+    #{lastLoginTime,jdbcType=DATE}, #{loginCount,jdbcType=BIGINT}, #{roleGuid,jdbcType=VARCHAR},
+    #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR},
+    #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.wesite.normative.examine.entity.system.SysUser">
-    insert into "sys_user"
+    insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="guid != null">
-        guid,
+        GUID,
       </if>
       <if test="userName != null">
-        user_name,
+        USER_NAME,
       </if>
       <if test="loginAccount != null">
-        login_account,
+        LOGIN_ACCOUNT,
       </if>
       <if test="userPassword != null">
-        user_password,
+        USER_PASSWORD,
       </if>
       <if test="sex != null">
-        sex,
+        SEX,
       </if>
       <if test="birthday != null">
-        birthday,
+        BIRTHDAY,
       </if>
       <if test="mobile != null">
-        mobile,
+        MOBILE,
       </if>
       <if test="email != null">
-        email,
+        EMAIL,
       </if>
       <if test="loginTime != null">
-        login_time,
+        LOGIN_TIME,
       </if>
       <if test="lastLoginTime != null">
-        last_login_time,
+        LAST_LOGIN_TIME,
       </if>
       <if test="loginCount != null">
-        login_count,
+        LOGIN_COUNT,
       </if>
       <if test="roleGuid != null">
-        role_guid,
+        ROLE_GUID,
       </if>
       <if test="createBy != null">
-        create_by,
+        CREATE_BY,
       </if>
       <if test="createTime != null">
-        create_time,
+        CREATE_TIME,
       </if>
       <if test="updateBy != null">
-        update_by,
+        UPDATE_BY,
       </if>
       <if test="updateTime != null">
-        update_time,
+        UPDATE_TIME,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -237,61 +237,61 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.wesite.normative.examine.entity.system.SysUserExample" resultType="java.lang.Long">
-    select count(*) from "sys_user"
+    select count(*) from sys_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update "sys_user"
+    update sys_user
     <set>
       <if test="record.guid != null">
-        guid = #{record.guid,jdbcType=VARCHAR},
+        GUID = #{record.guid,jdbcType=VARCHAR},
       </if>
       <if test="record.userName != null">
-        user_name = #{record.userName,jdbcType=VARCHAR},
+        USER_NAME = #{record.userName,jdbcType=VARCHAR},
       </if>
       <if test="record.loginAccount != null">
-        login_account = #{record.loginAccount,jdbcType=VARCHAR},
+        LOGIN_ACCOUNT = #{record.loginAccount,jdbcType=VARCHAR},
       </if>
       <if test="record.userPassword != null">
-        user_password = #{record.userPassword,jdbcType=VARCHAR},
+        USER_PASSWORD = #{record.userPassword,jdbcType=VARCHAR},
       </if>
       <if test="record.sex != null">
-        sex = #{record.sex,jdbcType=CHAR},
+        SEX = #{record.sex,jdbcType=CHAR},
       </if>
       <if test="record.birthday != null">
-        birthday = #{record.birthday,jdbcType=DATE},
+        BIRTHDAY = #{record.birthday,jdbcType=DATE},
       </if>
       <if test="record.mobile != null">
-        mobile = #{record.mobile,jdbcType=VARCHAR},
+        MOBILE = #{record.mobile,jdbcType=VARCHAR},
       </if>
       <if test="record.email != null">
-        email = #{record.email,jdbcType=VARCHAR},
+        EMAIL = #{record.email,jdbcType=VARCHAR},
       </if>
       <if test="record.loginTime != null">
-        login_time = #{record.loginTime,jdbcType=DATE},
+        LOGIN_TIME = #{record.loginTime,jdbcType=DATE},
       </if>
       <if test="record.lastLoginTime != null">
-        last_login_time = #{record.lastLoginTime,jdbcType=DATE},
+        LAST_LOGIN_TIME = #{record.lastLoginTime,jdbcType=DATE},
       </if>
       <if test="record.loginCount != null">
-        login_count = #{record.loginCount,jdbcType=BIGINT},
+        LOGIN_COUNT = #{record.loginCount,jdbcType=BIGINT},
       </if>
       <if test="record.roleGuid != null">
-        role_guid = #{record.roleGuid,jdbcType=VARCHAR},
+        ROLE_GUID = #{record.roleGuid,jdbcType=VARCHAR},
       </if>
       <if test="record.createBy != null">
-        create_by = #{record.createBy,jdbcType=VARCHAR},
+        CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
       </if>
       <if test="record.createTime != null">
-        create_time = #{record.createTime,jdbcType=DATE},
+        CREATE_TIME = #{record.createTime,jdbcType=DATE},
       </if>
       <if test="record.updateBy != null">
-        update_by = #{record.updateBy,jdbcType=VARCHAR},
+        UPDATE_BY = #{record.updateBy,jdbcType=VARCHAR},
       </if>
       <if test="record.updateTime != null">
-        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -299,95 +299,95 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update "sys_user"
-    set guid = #{record.guid,jdbcType=VARCHAR},
-      user_name = #{record.userName,jdbcType=VARCHAR},
-      login_account = #{record.loginAccount,jdbcType=VARCHAR},
-      user_password = #{record.userPassword,jdbcType=VARCHAR},
-      sex = #{record.sex,jdbcType=CHAR},
-      birthday = #{record.birthday,jdbcType=DATE},
-      mobile = #{record.mobile,jdbcType=VARCHAR},
-      email = #{record.email,jdbcType=VARCHAR},
-      login_time = #{record.loginTime,jdbcType=DATE},
-      last_login_time = #{record.lastLoginTime,jdbcType=DATE},
-      login_count = #{record.loginCount,jdbcType=BIGINT},
-      role_guid = #{record.roleGuid,jdbcType=VARCHAR},
-      create_by = #{record.createBy,jdbcType=VARCHAR},
-      create_time = #{record.createTime,jdbcType=DATE},
-      update_by = #{record.updateBy,jdbcType=VARCHAR},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    update sys_user
+    set GUID = #{record.guid,jdbcType=VARCHAR},
+    USER_NAME = #{record.userName,jdbcType=VARCHAR},
+    LOGIN_ACCOUNT = #{record.loginAccount,jdbcType=VARCHAR},
+    USER_PASSWORD = #{record.userPassword,jdbcType=VARCHAR},
+    SEX = #{record.sex,jdbcType=CHAR},
+    BIRTHDAY = #{record.birthday,jdbcType=DATE},
+    MOBILE = #{record.mobile,jdbcType=VARCHAR},
+    EMAIL = #{record.email,jdbcType=VARCHAR},
+    LOGIN_TIME = #{record.loginTime,jdbcType=DATE},
+    LAST_LOGIN_TIME = #{record.lastLoginTime,jdbcType=DATE},
+    LOGIN_COUNT = #{record.loginCount,jdbcType=BIGINT},
+    ROLE_GUID = #{record.roleGuid,jdbcType=VARCHAR},
+    CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
+    CREATE_TIME = #{record.createTime,jdbcType=DATE},
+    UPDATE_BY = #{record.updateBy,jdbcType=VARCHAR},
+    UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.wesite.normative.examine.entity.system.SysUser">
-    update "sys_user"
+    update sys_user
     <set>
       <if test="userName != null">
-        user_name = #{userName,jdbcType=VARCHAR},
+        USER_NAME = #{userName,jdbcType=VARCHAR},
       </if>
       <if test="loginAccount != null">
-        login_account = #{loginAccount,jdbcType=VARCHAR},
+        LOGIN_ACCOUNT = #{loginAccount,jdbcType=VARCHAR},
       </if>
       <if test="userPassword != null">
-        user_password = #{userPassword,jdbcType=VARCHAR},
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
       </if>
       <if test="sex != null">
-        sex = #{sex,jdbcType=CHAR},
+        SEX = #{sex,jdbcType=CHAR},
       </if>
       <if test="birthday != null">
-        birthday = #{birthday,jdbcType=DATE},
+        BIRTHDAY = #{birthday,jdbcType=DATE},
       </if>
       <if test="mobile != null">
-        mobile = #{mobile,jdbcType=VARCHAR},
+        MOBILE = #{mobile,jdbcType=VARCHAR},
       </if>
       <if test="email != null">
-        email = #{email,jdbcType=VARCHAR},
+        EMAIL = #{email,jdbcType=VARCHAR},
       </if>
       <if test="loginTime != null">
-        login_time = #{loginTime,jdbcType=DATE},
+        LOGIN_TIME = #{loginTime,jdbcType=DATE},
       </if>
       <if test="lastLoginTime != null">
-        last_login_time = #{lastLoginTime,jdbcType=DATE},
+        LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=DATE},
       </if>
       <if test="loginCount != null">
-        login_count = #{loginCount,jdbcType=BIGINT},
+        LOGIN_COUNT = #{loginCount,jdbcType=BIGINT},
       </if>
       <if test="roleGuid != null">
-        role_guid = #{roleGuid,jdbcType=VARCHAR},
+        ROLE_GUID = #{roleGuid,jdbcType=VARCHAR},
       </if>
       <if test="createBy != null">
-        create_by = #{createBy,jdbcType=VARCHAR},
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        create_time = #{createTime,jdbcType=DATE},
+        CREATE_TIME = #{createTime,jdbcType=DATE},
       </if>
       <if test="updateBy != null">
-        update_by = #{updateBy,jdbcType=VARCHAR},
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where guid = #{guid,jdbcType=VARCHAR}
+    where GUID = #{guid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wesite.normative.examine.entity.system.SysUser">
-    update "sys_user"
-    set user_name = #{userName,jdbcType=VARCHAR},
-      login_account = #{loginAccount,jdbcType=VARCHAR},
-      user_password = #{userPassword,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=CHAR},
-      birthday = #{birthday,jdbcType=DATE},
-      mobile = #{mobile,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      login_time = #{loginTime,jdbcType=DATE},
-      last_login_time = #{lastLoginTime,jdbcType=DATE},
-      login_count = #{loginCount,jdbcType=BIGINT},
-      role_guid = #{roleGuid,jdbcType=VARCHAR},
-      create_by = #{createBy,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=DATE},
-      update_by = #{updateBy,jdbcType=VARCHAR},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where guid = #{guid,jdbcType=VARCHAR}
+    update sys_user
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      LOGIN_ACCOUNT = #{loginAccount,jdbcType=VARCHAR},
+      USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=CHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      MOBILE = #{mobile,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      LOGIN_TIME = #{loginTime,jdbcType=DATE},
+      LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=DATE},
+      LOGIN_COUNT = #{loginCount,jdbcType=BIGINT},
+      ROLE_GUID = #{roleGuid,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=DATE},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where GUID = #{guid,jdbcType=VARCHAR}
   </update>
 </mapper>
