@@ -10,6 +10,7 @@ import { CustomValidators } from '../shared/custom-validator/custom-validator';
 import { UserBusinessService} from '../business-service/user/user-business.service';
 import { Utils } from "../shared/util/utils";
 import { DomSanitizer } from "@angular/platform-browser";
+import {Md5} from "ts-md5/dist/md5";
 
 
 
@@ -68,7 +69,7 @@ export class LoginComponent implements OnInit {
       let that = this;
       this.httpService.post(this.userBusinessService.login(), {
         account:  this.loginForm.controls['account'].value,
-        passWord:  this.loginForm.controls['passWord'].value,
+        passWord:  Md5.hashStr(this.loginForm.controls['passWord'].value),
         verifyCode: this.loginForm.controls['verifyCode'].value
       }, function (successful, data, res) {
         if (successful && Utils.resultSuccess(data.success)) {

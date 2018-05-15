@@ -11,15 +11,18 @@ import com.wesite.normative.examine.service.system.SysUserService;
 import com.wesite.normative.examine.systemConfig.valid.Valid;
 import com.wesite.normative.examine.utils.CommonUtils;
 import com.wesite.normative.examine.utils.KaptchaUtil;
+import com.wesite.normative.examine.utils.MD5Util;
 import com.wesite.normative.examine.utils.RandomValidateCodeUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.apache.tomcat.util.security.MD5Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import sun.misc.BASE64Encoder;
+import sun.security.provider.MD5;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -99,4 +102,5 @@ public class LoginController extends BaseController {
         }
 
     }
+
 }
