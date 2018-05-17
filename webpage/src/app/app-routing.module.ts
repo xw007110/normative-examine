@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
 
 import { PageNotFoundComponent } from './error-page/page-not-found.component';
+import { MaterialListComponent } from './material/material-list/material-list.component';
 
 
 
@@ -12,6 +13,10 @@ import { PageNotFoundComponent } from './error-page/page-not-found.component';
  */
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {
+    path:'material',
+    loadChildren: 'app/material/material.module#MaterialModule'
+ },
   { 
      path: 'login',  
      loadChildren: 'app/login/login.module#LoginModule'
@@ -23,6 +28,7 @@ const appRoutes: Routes = [
      path:'**',
       component: PageNotFoundComponent
   }
+ 
 ];
 
 @NgModule({

@@ -32,7 +32,7 @@ import { SpinService } from './shared/spin/spin.service';
 import  { AppRoutingModule } from './app-routing.module';
 
 //strategy
-import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
+import {SelectivePreloadingStrategy} from "./selective-preloading-strategy"
 
 
 
@@ -56,7 +56,7 @@ import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
     ToastBoxComponent,
     ToastComponent,
     SpinComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   providers: [
     AppService,
