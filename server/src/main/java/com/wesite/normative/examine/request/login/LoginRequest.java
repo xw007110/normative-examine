@@ -1,4 +1,4 @@
-package com.wesite.normative.examine.entity.login;
+package com.wesite.normative.examine.request.login;
 
 import com.wesite.normative.examine.systemConfig.valid.Check;
 import io.swagger.annotations.ApiModelProperty;
@@ -9,7 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @author XuanMing
  * @create 2018/5/7 14:40
  **/
-public class LoginEntity {
+public class LoginRequest {
 
     /**
      * 账号

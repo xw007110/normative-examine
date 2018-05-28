@@ -1,6 +1,7 @@
 package com.wesite.normative.examine.service.system;
 
 import com.wesite.normative.examine.entity.system.SysUser;
+import com.wesite.normative.examine.request.login.UserQueryRequest;
 
 import java.util.List;
 
@@ -19,5 +20,18 @@ public interface SysUserService {
      */
     List<SysUser> getSysUserByAccount(String account);
 
+    /**
+     * 登录成功后处理用户信息 包括记录用户的登录时间 登录次数等
+     *
+     * @param sysUser sysUser
+     * @return 用户信息
+     */
     SysUser disposeUserInfo(SysUser sysUser);
+
+    /**
+     * 查询用户列表
+     * @param request 查询条件
+     * @return 用户列表
+     */
+    List<SysUser> listUser(UserQueryRequest request);
 }

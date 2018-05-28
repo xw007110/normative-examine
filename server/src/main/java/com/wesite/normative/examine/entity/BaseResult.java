@@ -46,6 +46,10 @@ public class BaseResult {
         return new BaseResult(true, SystemMsgBase.SUCCESS_COMMON_CODE, SystemMsgBase.SUCCESS_COMMON_MSG, data);
     }
 
+    public static BaseResult ok() {
+        return new BaseResult(true, SystemMsgBase.SUCCESS_COMMON_CODE, SystemMsgBase.SUCCESS_COMMON_MSG, null);
+    }
+
     public static BaseResult fail(int code, String msg, Object data) {
         return new BaseResult(false, code, msg, data);
     }

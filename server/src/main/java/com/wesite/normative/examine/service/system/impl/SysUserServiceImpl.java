@@ -3,9 +3,11 @@ package com.wesite.normative.examine.service.system.impl;
 import com.wesite.normative.examine.dao.system.SysUserMapper;
 import com.wesite.normative.examine.entity.system.SysUser;
 import com.wesite.normative.examine.entity.system.SysUserExample;
+import com.wesite.normative.examine.request.login.UserQueryRequest;
 import com.wesite.normative.examine.service.system.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -45,5 +47,19 @@ public class SysUserServiceImpl implements SysUserService {
         sysUserMapper.updateByPrimaryKey(sysUser);
 
         return sysUser;
+    }
+
+    @Override
+    public List<SysUser> listUser(UserQueryRequest request) {
+        SysUserExample example = new SysUserExample();
+        example.setLimit(request.getPageSize());
+        example.setOffset(request.getPage());
+        if (!StringUtils.isEmpty(request.getUserName())) {
+            example.createCriteria().andUserNameLike(request.getUserName());
+        }
+        if (!StringUtils.isEmpty(request.getUserName())) {
+            example.createCriteria().andMobileLike(request.getUserName());
+        }
+        return sysUserMapper.selectByExample(example);
     }
 }
