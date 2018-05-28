@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f31b204c-e4e1-4ad6-b0aa-a56d1383cbe4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/UserController.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EhCacheUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/EhCacheUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/BaseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Consumer.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/function/Consumer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="37" selection-start-column="21" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getMethodByClassAndName</find>
+      <find>Base_Column_List</find>
+      <find>login_time</find>
+      <find>@EnableCaching</find>
+      <find>WebMvcConfigurerAdapter</find>
+      <find>addMapping</find>
+      <find>UUID</find>
+      <find>1</find>
+      <find>selectByExample</find>
+      <find>BaseResultMap</find>
+      <find>from</find>
+      <find>normative..</find>
+      <find>field.getName()</find>
+      <find>limit</find>
+      <find>select</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>com.wesite.normative.examine.entity.system</replace>
+      <replace>check.name()</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/NormativeExamineApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/TomcatContainerFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/system/BaseResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/BaseResultEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/Page.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/BasePage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/SysUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/SwaggerConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/BaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/DemoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/ValidateCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/Valid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/Check.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/ParameterCheckAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/exception/ParameterException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/ParameterCheckOption.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/RandomValidateCodeUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/contants/SystemMsgBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/interceptor/InterceptorConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/CorsConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/dao/system/SysUserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/KaptchaConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/EhCacheUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/CommonUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/KaptchaUtil.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/service/system/SysUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/service/system/impl/SysUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/contants/SystemContants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/system/SysUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/BaseResult.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/system/SysUserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/valid/Check.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/login/LoginEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/valid/ParameterCheckOption.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/BaseExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/dao/DAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/dao/DaoSupport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/MD5Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/LoginController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="normative_examine" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="normative_examine" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="35" />
+    <option name="y" value="149" />
+    <option name="width" value="1920" />
+    <option name="height" value="977" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <hideEmptyPackages ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="normative_examine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="normative_examine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="normative_examine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="normative_examine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wesite.normative.examine.dao" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.LoginController">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="CommonUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wesite.normative.examine.utils.CommonUtils" />
+      <module name="normative_examine" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wesite.normative.examine.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="LoginController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wesite.normative.examine.controller.system.LoginController" />
+      <module name="normative_examine" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wesite.normative.examine.controller.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="NormativeExamineApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="normative_examine" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wesite.normative.examine.NormativeExamineApplication" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.NormativeExamineApplication" />
+      <item itemvalue="Application.CommonUtils" />
+      <item itemvalue="Application.LoginController" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LoginController" />
+        <item itemvalue="Application.CommonUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f31b204c-e4e1-4ad6-b0aa-a56d1383cbe4" name="Default" comment="" />
+      <created>1519877241576</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1519877241576</updated>
+      <workItem from="1519877244806" duration="9926000" />
+      <workItem from="1519957521230" duration="675000" />
+      <workItem from="1520216890549" duration="2509000" />
+      <workItem from="1520318492948" duration="3473000" />
+      <workItem from="1520398985052" duration="533000" />
+      <workItem from="1520931165468" duration="2461000" />
+      <workItem from="1520992199901" duration="19299000" />
+      <workItem from="1521080751373" duration="5538000" />
+      <workItem from="1521182458015" duration="8901000" />
+      <workItem from="1522142535666" duration="6000" />
+      <workItem from="1525230884709" duration="1798000" />
+      <workItem from="1525248616280" duration="3135000" />
+      <workItem from="1525312085964" duration="12207000" />
+      <workItem from="1525673271226" duration="10671000" />
+      <workItem from="1525740612358" duration="9133000" />
+      <workItem from="1526290843565" duration="1765000" />
+      <workItem from="1526305420980" duration="1356000" />
+      <workItem from="1526344414631" duration="11413000" />
+      <workItem from="1526387869054" duration="3698000" />
+      <workItem from="1527487633793" duration="2098000" />
+      <workItem from="1527489987690" duration="1103000" />
+      <workItem from="1527491151828" duration="253000" />
+      <workItem from="1527491861882" duration="428000" />
+      <workItem from="1527492654177" duration="618000" />
+      <workItem from="1527493429120" duration="2463000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="115460000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="35" y="149" width="1920" height="977" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5021299" side_tool="true" visible="true" weight="0.32954547" />
+      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.2971246" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3991323" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4978701" visible="true" weight="0.32954547" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" sideWeight="0.49946752" weight="0.32954547" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49946752" weight="0.32954547" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.329718" />
+      <window_info anchor="bottom" id="Spring" order="11" sideWeight="0.49946752" weight="0.32954547" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49307775" weight="0.32954547" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24494143" />
+      <window_info anchor="right" id="Bean Validation" order="7" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.329718" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Spring" order="11" weight="0.329718" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.329718" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49573562" weight="0.329718" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.329718" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5042644" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.329718" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.329718" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32995737" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21908316" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.329718" />
+      <window_info anchor="right" id="Bean Validation" order="7" />
+      <window_info anchor="bottom" id="Debug" order="4" visible="true" weight="0.3991323" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="16" />
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="normative_examine" type="b2602c69:ProjectViewProjectNode" />
+        <item name="server" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.14.RELEASE/spring-core-4.3.14.RELEASE.jar!/org/springframework/util/StringUtils.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/RandomValidateCodeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/KaptchaConfig.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/ehcache/ehcache/3.2.0/ehcache-3.2.0.jar!/org/ehcache/Cache.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/ehcache/ehcache/3.2.0/ehcache-3.2.0.jar!/org/ehcache/config/builders/CacheConfigurationBuilder.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/ehcache/ehcache/3.2.0/ehcache-3.2.0.jar!/org/ehcache/config/builders/ResourcePoolsBuilder.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/KaptchaUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar!/sun/misc/BASE64Encoder.class" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/penggle/kaptcha/2.3.2/kaptcha-2.3.2.jar!/com/google/code/kaptcha/impl/DefaultKaptcha.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar!/org/aspectj/lang/ProceedingJoinPoint.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-annotations/1.5.10/swagger-annotations-1.5.10.jar!/io/swagger/annotations/ApiParam.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/BasePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/system/SysUserExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.27/tomcat-embed-core-8.5.27.jar!/org/apache/catalina/connector/RequestFacade.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.14.RELEASE/spring-core-4.3.14.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.14.RELEASE/spring-aop-4.3.14.RELEASE.jar!/org/springframework/aop/aspectj/AbstractAspectJAdvice.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/contants/SystemContants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/dao/DaoSupport.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/dao/DAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/system/SysUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="89" column="17" lean-forward="true" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/dao/system/SysUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-199">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/contants/SystemMsgBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/interceptor/InterceptorConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/interceptor/InterceptorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/CorsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/NormativeExamineApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="e#590#591#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/valid/ParameterCheckAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/annotation/Annotation.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/valid/ParameterCheckOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1925">
+          <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/valid/Check.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/annotation/ElementType.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/annotation/RetentionPolicy.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/valid/Valid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/system/SysUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/service/system/SysUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/exception/ParameterException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/login/LoginEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" selection-start-column="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/entity/BaseResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.27/tomcat-embed-core-8.5.27.jar!/org/apache/tomcat/util/security/MD5Encoder.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/MD5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/service/system/impl/SysUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/BaseExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/utils/EhCacheUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="270" column="6" selection-start-line="270" selection-start-column="6" selection-end-line="270" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>normative_examine</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
