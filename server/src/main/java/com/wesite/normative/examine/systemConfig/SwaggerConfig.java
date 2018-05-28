@@ -1,5 +1,6 @@
 package com.wesite.normative.examine.systemConfig;
 
+import com.wesite.normative.examine.entity.system.SysUser;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -27,7 +28,8 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.wesite.normative.examine.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .ignoredParameterTypes(SysUser.class);
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()

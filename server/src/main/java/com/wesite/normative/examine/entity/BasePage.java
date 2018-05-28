@@ -1,5 +1,7 @@
 package com.wesite.normative.examine.entity;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 分页父类
  *
@@ -11,11 +13,13 @@ public class BasePage {
     /**
      * page
      */
+    @ApiModelProperty(value = "起始页", name = "page")
     private int page;
 
     /**
      * pageSize
      */
+    @ApiModelProperty(value = "每页条数", name = "pageSize")
     private int pageSize;
 
 

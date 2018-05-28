@@ -1,13 +1,16 @@
 package com.wesite.normative.examine.entity.system;
 
+import com.wesite.normative.examine.entity.BasePage;
 import com.wesite.normative.examine.systemConfig.valid.Check;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author 
- */
+* 用户实体类
+* @author XuanMing
+* @create 2018/5/28 14:10
+**/
 public class SysUser implements Serializable {
 
     private String guid;
