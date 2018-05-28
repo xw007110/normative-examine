@@ -34,7 +34,7 @@ import java.util.Map;
  * @create 2018/3/13 17:17
  **/
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/login1")
 public class LoginController extends BaseController {
 
     @Autowired
