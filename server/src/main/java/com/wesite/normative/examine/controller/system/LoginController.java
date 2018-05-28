@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
@@ -82,8 +83,7 @@ public class LoginController extends BaseController {
             outputStream = new ByteArrayOutputStream();
             BufferedImage image = kaptcha.createImage(text);
             ImageIO.write(image, "jpg", outputStream);
-            BASE64Encoder encoder = new BASE64Encoder();
-            result.put("img", encoder.encode(outputStream.toByteArray()));
+            result.put("img", Base64.getEncoder().encodeToString(outputStream.toByteArray()));
             request.getSession().setAttribute(SystemContants.SESSION_VERIFY_CODE_KEY, text);
 
             return BaseResult.ok(result);
