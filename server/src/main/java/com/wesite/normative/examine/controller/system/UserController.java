@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @create 2018/5/16 17:00
  **/
 @Controller
-@RequestMapping("/user1")
+@RequestMapping("/user")
 public class UserController {
 }
