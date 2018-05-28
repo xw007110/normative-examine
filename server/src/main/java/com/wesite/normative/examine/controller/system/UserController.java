@@ -24,5 +24,17 @@ import java.util.List;
  **/
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController {
+
+    @Autowired
+    private SysUserService sysUserService;
+
+    @ApiOperation(value = "用户列表接口", notes = "用户列表接口,返回用户信息列表")
+    @GetMapping("/listUser")
+    @ResponseBody
+    public BaseResult listUser(@Valid @ModelAttribute UserQueryRequest request) {
+        List<SysUser> userList = sysUserService.listUser(request);
+        return BaseResult.ok(userList);
+    }
+
 }

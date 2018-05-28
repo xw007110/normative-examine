@@ -5,42 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f31b204c-e4e1-4ad6-b0aa-a56d1383cbe4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/normative_examine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/normative_examine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/BaseExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/systemConfig/BaseExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/NormativeExamineApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/contants/SystemContants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/contants/SystemMsgBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/controller/BaseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/controller/system/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/dao/system/SysUserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/entity/BasePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/entity/BaseResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/entity/login/LoginEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/entity/system/SysUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/entity/system/SysUserExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/entity/system/SysUserExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/entity/system/SysUserExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/entity/system/SysUserExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/exception/ParameterException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/interceptor/InterceptorConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/interceptor/InterceptorController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/service/system/SysUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/service/system/impl/SysUserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/systemConfig/BaseExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/systemConfig/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/systemConfig/TomcatContainerFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/systemConfig/valid/Check.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/systemConfig/valid/ParameterCheckAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/systemConfig/valid/ParameterCheckOption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/systemConfig/valid/Valid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/utils/CommonUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/utils/EhCacheUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/utils/KaptchaUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/utils/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wesite/normative/examine/utils/RandomValidateCodeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/UserController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +20,8 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="407">
+              <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/BaseController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -415,12 +380,12 @@
       <workItem from="1527491151828" duration="253000" />
       <workItem from="1527491861882" duration="428000" />
       <workItem from="1527492654177" duration="618000" />
-      <workItem from="1527493429120" duration="2244000" />
+      <workItem from="1527493429120" duration="2463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115241000" />
+    <option name="totallyTimeSpent" value="115460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="149" width="1920" height="977" extended-state="0" />
@@ -759,7 +724,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -768,8 +733,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wesite/normative/examine/controller/system/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="407">
+          <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
