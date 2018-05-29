@@ -1,4 +1,4 @@
-package com.wesite.normative.examine.request.login;
+package com.wesite.normative.examine.request.user;
 
 import com.wesite.normative.examine.entity.BasePage;
 import com.wesite.normative.examine.systemConfig.valid.Check;
