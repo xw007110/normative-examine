@@ -1,6 +1,7 @@
 package com.wesite.normative.examine.systemConfig.valid;
 
 import com.wesite.normative.examine.exception.ParameterException;
+import com.wesite.normative.examine.utils.CommonUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +12,8 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 参数校验具体业务类
@@ -125,6 +128,16 @@ public class ParameterCheckOption {
                 return check.name() + "必须为数值型，且不小于" + check.minNum();
             }
         }
+        if (check.isMobile()) {
+            if (!CommonUtils.checkMobile(String.valueOf(field.get(args)))) {
+                return "请填写正确的" + check.name();
+            }
+        }
+        if(check.isEmail()){
+            if(!CommonUtils.checkEmail(String.valueOf(field.get(args)))){
+                return "请填写正确的" + check.name();
+            }
+        }
         return "";
     }
 
@@ -142,4 +155,5 @@ public class ParameterCheckOption {
         }
         return null;
     }
+
 }
