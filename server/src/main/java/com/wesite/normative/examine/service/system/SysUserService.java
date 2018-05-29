@@ -1,7 +1,7 @@
 package com.wesite.normative.examine.service.system;
 
 import com.wesite.normative.examine.entity.system.SysUser;
-import com.wesite.normative.examine.request.login.UserQueryRequest;
+import com.wesite.normative.examine.request.system.UserQueryRequest;
 
 import java.util.List;
 

@@ -3,7 +3,7 @@ package com.wesite.normative.examine.controller.system;
 import com.wesite.normative.examine.controller.BaseController;
 import com.wesite.normative.examine.entity.BaseResult;
 import com.wesite.normative.examine.entity.system.SysUser;
-import com.wesite.normative.examine.request.login.UserQueryRequest;
+import com.wesite.normative.examine.request.system.UserQueryRequest;
 import com.wesite.normative.examine.service.system.SysUserService;
 import com.wesite.normative.examine.systemConfig.valid.Valid;
 import io.swagger.annotations.ApiOperation;

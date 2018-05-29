@@ -3,7 +3,7 @@ package com.wesite.normative.examine.service.system.impl;
 import com.wesite.normative.examine.dao.system.SysUserMapper;
 import com.wesite.normative.examine.entity.system.SysUser;
 import com.wesite.normative.examine.entity.system.SysUserExample;
-import com.wesite.normative.examine.request.login.UserQueryRequest;
+import com.wesite.normative.examine.request.system.UserQueryRequest;
 import com.wesite.normative.examine.service.system.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
