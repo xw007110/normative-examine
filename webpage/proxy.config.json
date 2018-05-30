@@ -1,10 +1,13 @@
 {
-    "/api":{
+    "/normativeExamine":{
         "target":"http://localhost:8080/normativeExamine",
         "secure": false,
         "changeOrigin":true,
         "pathRewrite": {
-        "^/api": ""
+        "^/normativeExamine": ""
         }
     }
+	
+
+	
 }

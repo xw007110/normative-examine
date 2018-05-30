@@ -2,7 +2,9 @@ package com.wesite.normative.examine.service.system;
 
 import com.wesite.normative.examine.entity.system.SysUser;
 import com.wesite.normative.examine.request.system.UserAddRequest;
+import com.wesite.normative.examine.request.system.UserDeleteRequest;
 import com.wesite.normative.examine.request.system.UserQueryRequest;
+import com.wesite.normative.examine.request.system.UserUpdateRequest;
 
 import java.util.List;
 
@@ -43,4 +45,20 @@ public interface SysUserService {
      * @return 成功状态
      */
     Integer saveUser(UserAddRequest userAddRequest, SysUser loginUserInfo);
+
+    /**
+     * 删除用户
+     *
+     * @param request 删除用户信息
+     * @return
+     */
+    Integer deleteUser(UserDeleteRequest request);
+
+    /**
+     * 修改用户
+     * @param userUpdateRequest 修改用户信息
+     * @param loginUserInfo 登录用户信息
+     * @return 成功状态
+     */
+    Integer updateUser(UserUpdateRequest userUpdateRequest, SysUser loginUserInfo);
 }
