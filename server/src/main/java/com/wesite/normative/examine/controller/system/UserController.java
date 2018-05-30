@@ -10,14 +10,11 @@ import com.wesite.normative.examine.request.system.UserQueryRequest;
 import com.wesite.normative.examine.request.system.UserUpdateRequest;
 import com.wesite.normative.examine.service.system.SysUserService;
 import com.wesite.normative.examine.systemConfig.valid.Valid;
-import com.wesite.normative.examine.utils.CommonUtils;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
 import java.util.List;
 
 /**
