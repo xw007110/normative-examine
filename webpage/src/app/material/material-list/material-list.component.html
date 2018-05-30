@@ -1,29 +1,30 @@
-<div class="row white">
-<div class="col-xs-2 col-sm-2">
-<div>
-  <div class="">
-   <p class="c-material-list-text-xxh">{{votes}}</p>
-  </div>
-  <div class="label">Points</div>
-</div>
-</div>
-<div class="col-xs-10 col-sm-10">
-<a class="" href={{link}}>
-  {{title}}
-</a>
-<ul class="">
-    <li class="">
-        <div href (click)="voteUp()">
-          <i class=""></i>
-          upvote
+<div class="container-fluid">
+    <div class="row backgroudColor">
+        <div class="col-xs-2 col-sm-2">
+            <div>
+                <div class="">
+                    <p class="h4 c-material-list-text-xxh">{{votes}}</p>
+                </div>
+                <div class="c-material-list-text h6">Points</div>
+            </div>
         </div>
-      </li>
-  <li class="">
-    <div (click)="voteDown()">
-      <i class=""></i>
-      downvote
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-4 col-sm-4">
+            <a class="h3 title" href={{link}}>
+          {{title}}
+             </a>
+            <div class="row">
+                <div class="col-xs-4 col-sm-4">
+                    <div href (click)="voteUp()">
+                        <i class=""></i> upvote
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-4">
+                    <div (click)="voteDown()">
+                        <i class=""></i> downvote
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </li>
-</ul>
-</div>
 </div>
