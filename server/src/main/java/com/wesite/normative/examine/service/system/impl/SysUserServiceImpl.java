@@ -3,8 +3,10 @@ package com.wesite.normative.examine.service.system.impl;
 import com.wesite.normative.examine.dao.system.SysUserMapper;
 import com.wesite.normative.examine.entity.system.SysUser;
 import com.wesite.normative.examine.entity.system.SysUserExample;
-import com.wesite.normative.examine.request.login.UserQueryRequest;
+import com.wesite.normative.examine.request.system.UserAddRequest;
+import com.wesite.normative.examine.request.system.UserQueryRequest;
 import com.wesite.normative.examine.service.system.SysUserService;
+import com.wesite.normative.examine.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -61,5 +63,23 @@ public class SysUserServiceImpl implements SysUserService {
             example.createCriteria().andMobileLike(request.getUserName());
         }
         return sysUserMapper.selectByExample(example);
+    }
+
+    @Override
+    public Integer saveUser(UserAddRequest userAddRequest , SysUser loginUserInfo) {
+        SysUser sysUser = new SysUser();
+        sysUser.setGuid(CommonUtils.get32UUID());
+        sysUser.setUserName(userAddRequest.getUserName());
+        sysUser.setLoginAccount(userAddRequest.getLoginAccount());
+        sysUser.setUserPassword(userAddRequest.getUserPassword());
+        sysUser.setSex(userAddRequest.getSex());
+        sysUser.setBirthday(userAddRequest.getBirthday());
+        sysUser.setMobile(userAddRequest.getMobile());
+        sysUser.setEmail(userAddRequest.getEmail());
+        sysUser.setRoleGuid(userAddRequest.getRoleGuid());
+        sysUser.setCreateBy(loginUserInfo == null ? "" : loginUserInfo.getUserName());
+        sysUser.setCreateTime(new Date());
+        sysUser.setLoginCount(0L);
+        return sysUserMapper.insertSelective(sysUser);
     }
 }

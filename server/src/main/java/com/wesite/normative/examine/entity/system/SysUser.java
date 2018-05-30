@@ -22,8 +22,7 @@ public class SysUser implements Serializable {
     private String userPassword;
 
     /**
-     * 0:男
-1:女
+     * 0:男 1:女
      */
     private String sex;
 

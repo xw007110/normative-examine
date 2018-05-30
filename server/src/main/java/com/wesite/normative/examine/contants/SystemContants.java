@@ -13,4 +13,8 @@ public class SystemContants {
      */
     public static final String SESSION_VERIFY_CODE_KEY = "SESSION_VERIFY_CODE_KEY";
 
+    /**
+     * 系统用户数据KEY
+     */
+    public static final String SEESION_USER_INFO_KEY = "SEESION_USER_INFO_KEY";
 }

@@ -38,6 +38,16 @@ public @interface Check {
     public long minNum() default -999999;
 
     /**
+     * 是否为手机号码
+     */
+    public boolean isMobile() default false;
+
+    /**
+     * 是否为邮箱
+     */
+    public boolean isEmail() default false;
+
+    /**
      * 设置字段显示的名称
      * @return
      */
