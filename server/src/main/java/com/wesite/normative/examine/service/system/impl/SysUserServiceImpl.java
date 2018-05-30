@@ -4,7 +4,9 @@ import com.wesite.normative.examine.dao.system.SysUserMapper;
 import com.wesite.normative.examine.entity.system.SysUser;
 import com.wesite.normative.examine.entity.system.SysUserExample;
 import com.wesite.normative.examine.request.system.UserAddRequest;
+import com.wesite.normative.examine.request.system.UserDeleteRequest;
 import com.wesite.normative.examine.request.system.UserQueryRequest;
+import com.wesite.normative.examine.request.system.UserUpdateRequest;
 import com.wesite.normative.examine.service.system.SysUserService;
 import com.wesite.normative.examine.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,6 +82,29 @@ public class SysUserServiceImpl implements SysUserService {
         sysUser.setCreateBy(loginUserInfo == null ? "" : loginUserInfo.getUserName());
         sysUser.setCreateTime(new Date());
         sysUser.setLoginCount(0L);
+        sysUser.setUpdateBy(loginUserInfo == null ? "" : loginUserInfo.getUserName());
         return sysUserMapper.insertSelective(sysUser);
+    }
+
+    @Override
+    public Integer deleteUser(UserDeleteRequest request) {
+        return sysUserMapper.deleteByPrimaryKey(request.getGuid());
+    }
+
+    @Override
+    public Integer updateUser(UserUpdateRequest userUpdateRequest, SysUser loginUserInfo) {
+        SysUser sysUser = new SysUser();
+        sysUser.setGuid(userUpdateRequest.getGuid());
+        sysUser.setUserName(userUpdateRequest.getUserName());
+        sysUser.setLoginAccount(userUpdateRequest.getLoginAccount());
+        sysUser.setUserPassword(userUpdateRequest.getUserPassword());
+        sysUser.setSex(userUpdateRequest.getSex());
+        sysUser.setBirthday(userUpdateRequest.getBirthday());
+        sysUser.setMobile(userUpdateRequest.getMobile());
+        sysUser.setEmail(userUpdateRequest.getEmail());
+        sysUser.setRoleGuid(userUpdateRequest.getRoleGuid());
+        sysUser.setLoginCount(0L);
+        sysUser.setUpdateBy(loginUserInfo == null ? "" : loginUserInfo.getUserName());
+        return sysUserMapper.updateByPrimaryKey(sysUser);
     }
 }
