@@ -8,8 +8,8 @@ import { ToastService } from '../shared/toast/toast.service';
 import { ToastConfig, ToastType } from '../shared/toast/toast-model';
 import { CustomValidators } from '../shared/custom-validator/custom-validator';
 import { UserBusinessService} from '../business-service/user/user-business.service';
-import { Utils } from "../shared/util/utils";
-import { DomSanitizer } from "@angular/platform-browser";
+import { Utils } from '../shared/util/utils';
+import { DomSanitizer } from '@angular/platform-browser';
 import {Md5} from "ts-md5/dist/md5";
 
 
@@ -18,7 +18,7 @@ import {Md5} from "ts-md5/dist/md5";
 @Component({
   selector: 'c-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss',]
+  styleUrls: ['./login.component.scss', ]
 })
 export class LoginComponent implements OnInit {
 
@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
-    private router: Router, 
-    private toastService: ToastService, 
+    private router: Router,
+    private toastService: ToastService,
     private httpService: HttpService,
-    private userBusinessService:UserBusinessService,
+    private userBusinessService: UserBusinessService,
     private sanitizer: DomSanitizer,
     private formBuilder: FormBuilder) {
     let userNameFc = new FormControl('', Validators.compose([Validators.required, Validators.maxLength(15)]));
@@ -51,11 +51,12 @@ export class LoginComponent implements OnInit {
     this.getVerify();
   }
 
-  getVerify(){
+  getVerify() {
     let that = this;
+    
+
     this.httpService.get(this.userBusinessService.getVerify(), {
-    }, function (successful, data, res) {
-      //下面这句代码是为了解决路径不安全的问题，WARNING: sanitizing unsafe URL value，这个问题在上传文件时可能也会遇到
+    },  (successful, data, res) => {
       that.verifyCode = that.sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' + data.data.img);
     });
   }
@@ -66,21 +67,20 @@ export class LoginComponent implements OnInit {
    */
   login() {
     if (this.loginForm.valid) {
-      let that = this;
+
       this.httpService.post(this.userBusinessService.login(), {
         account:  this.loginForm.controls['account'].value,
         passWord:  Md5.hashStr(this.loginForm.controls['passWord'].value),
         verifyCode: this.loginForm.controls['verifyCode'].value
-      }, function (successful, data, res) {
+      },  (successful, data, res) => {
         if (successful && Utils.resultSuccess(data.success)) {
           const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功', 3000);
-          that.toastService.toast(toastCfg);
-          that.router.navigate(['/app/home']);
+          this.toastService.toast(toastCfg);
+          this.router.navigate(['/app/home']);
         }
       });
 
     }
-    
     // const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功！', 3000);
     // this.toastService.toast(toastCfg);
     // this.router.navigate(['/app/home']);
