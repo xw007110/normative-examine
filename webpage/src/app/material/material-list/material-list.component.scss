@@ -1,0 +1,20 @@
+@import '../../../assets/scss/base/app-base.scss';
+
+.c-material-list-text{
+    color: $c-color-black-secondary;
+    text-align: center;
+    color: #f3efef;
+    
+}
+.c-material-list-text-xh{
+    @extend .c-material-list-text;
+    size: 24px sans-serif;
+    }
+.c-material-list-text-xxh{
+     @extend .c-material-list-text;
+        font-size: 12rem sans-serif;
+        }
+.c-material-list-text-h{
+     @extend .c-material-list-text;
+            size: 16px sans-serif;
+         }  
