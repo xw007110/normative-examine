@@ -1,0 +1,38 @@
+@import '../../../assets/scss/base/app-base.scss';
+.backgroudColor {
+    background: #dddddd!important;
+}
+
+.c-material-list-text {
+    color: $c-color-black-secondary;
+    text-align: center;
+    color: #424040;
+}
+
+.c-material-list-text-xh {
+    @extend .c-material-list-text;
+    size: 24px sans-serif;
+}
+
+.c-material-list-text-xxh {
+    @extend .c-material-list-text;
+}
+
+.c-material-list-text-h {
+    @extend .c-material-list-text;
+    size: 16px sans-serif;
+}
+
+.title {
+    width: 100%;
+    color: #250ef3;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.line {
+    text-align: center;
+    padding: 0;
+    margin: 0px;
+}

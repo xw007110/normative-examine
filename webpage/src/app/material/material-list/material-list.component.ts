@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 import { HttpService } from '../../shared/http/http.service';
-
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { ToastService } from '../../shared/toast/toast.service';
 import { ToastConfig, ToastType } from '../../shared/toast/toast-model';
 import { CustomValidators } from '../../shared/custom-validator/custom-validator';
@@ -20,9 +20,25 @@ import {Md5} from "ts-md5/dist/md5";
 })
 export class MaterialListComponent implements OnInit {
 
-  constructor() { }
+  votes:number;
+  title:string;
+  link:string;
+  constructor() {
+    this.votes=0;
+    this.title="Angular";
+    this.link="http://baidu.com";
+   }
 
   ngOnInit() {
+  }
+
+  voteDown(){
+    if(this.votes>0){
+      this.votes-=1;
+    }
+  }
+  voteUp(){
+    this.votes+=1;
   }
 
 }
