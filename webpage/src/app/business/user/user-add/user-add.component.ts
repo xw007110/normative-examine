@@ -21,9 +21,9 @@ export class UserAddComponent {
     let userPasswordFc = new FormControl('', Validators.compose([Validators.required, Validators.minLength(6),Validators.maxLength(15)]));
     let userNameFc  = new FormControl('',Validators.compose([Validators.required, Validators.minLength(2),Validators.maxLength(15)]));
     let  emailFc  = new FormControl('',CustomValidators.email);
-    let  birthdayFc  = new FormControl();
+    let  birthdayFc  = new FormControl('');
     let mobileFc =  new FormControl('',CustomValidators.phone);
-    
+    let  sexFc  = new FormControl('');
   
    
 
@@ -33,9 +33,32 @@ export class UserAddComponent {
       userName:userNameFc,
       email:emailFc,
       birthday:birthdayFc,
-      mobile:mobileFc
+      mobile:mobileFc,
+      sex:sexFc
     });
   }
 
+
+
+    /**
+     * 上传
+     */
+    ok(): void {
+    
+      if(this.userEditForm.valid){
+           console.info(this.userEditForm.value);
+          //  const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '修改密码成功!', 2000);
+          //  this.toastService.toast(toastCfg);
+          //  this.close();
+      }
+  }
+
+
+    /**
+       * 关闭
+       */
+      close(): void {
+        this.activeModal.dismiss({ status: 'closed' });
+    }
 
 }

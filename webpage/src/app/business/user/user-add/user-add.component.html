@@ -18,6 +18,9 @@
                         <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['loginAccount'].errors && userEditForm.controls['loginAccount'].dirty)">
                              账号长度5-15位
                             </div>
+                            <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['loginAccount'].value.length==0)">
+                                    必填
+                             </div>
                     </div>
 
              
@@ -30,7 +33,10 @@
                     <div class="col-md-9">
                         <input type="password" class="form-control"  formControlName="userPassword" placeholder="请输入密码...">
                         <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['userPassword'].errors && userEditForm.controls['userPassword'].dirty)">
-                                长度6-15位
+                                 长度6-15位
+                        </div>
+                        <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['userPassword'].value.length==0)">
+                               必填
                         </div>
                     </div>
                 </div>
@@ -45,6 +51,9 @@
                         <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['userName'].errors && userEditForm.controls['userName'].dirty)">
                                 长度2-15位
                         </div>
+                        <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['userName'].value.length==0)">
+                                必填
+                         </div>
                     </div>
                 </div>
             </div>
@@ -83,6 +92,27 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-right">性别：</label>
+                            
+                                    <label class="col-md-3 col-form-label ">
+                                        <input type="radio" value="0" name="sex" formControlName="sex">男
+                                    </label>
+                                    <label class="col-md-3 col-form-label ">
+                                        <input type="radio" value="1" name="sex" formControlName="sex">女
+                                    </label>
+                                 
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+        
 
 
 
