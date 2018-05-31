@@ -1,45 +1,104 @@
-<div class="c-content-inner">
-    <div class="row">
-        <div class="col-md-12">
-            <p class="c-line-title">用户信息</p>
+<div class="container-fluid">
+        <div class="modal-header">
+                <h5 class="modal-title text-danger">添加用户</h5>
+                <button type="button" class="close" aria-label="Close" (click)="close()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+           
+    <form  [formGroup]="userEditForm">
+            <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label text-right">帐号：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control"  formControlName="loginAccount" placeholder="请输入帐号...">
+                        <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['loginAccount'].errors && userEditForm.controls['loginAccount'].dirty)">
+                             账号长度5-15位
+                            </div>
+                    </div>
+
+             
+                   
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label text-right">密码：</label>
+                    <div class="col-md-9">
+                        <input type="password" class="form-control"  formControlName="userPassword" placeholder="请输入密码...">
+                        <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['userPassword'].errors && userEditForm.controls['userPassword'].dirty)">
+                                长度6-15位
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label text-right">姓名：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" formControlName="userName" placeholder="请输入姓名...">
+                        <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['userName'].errors && userEditForm.controls['userName'].dirty)">
+                                长度2-15位
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label text-right">邮箱：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" formControlName="email" placeholder="请输入邮箱...">
+                        <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['email'].errors && userEditForm.controls['email'].dirty)">
+                               邮箱格式不正确
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label text-right">生日：</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" formControlName="birthday" [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'day'"   placeholder="日期">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label text-right">手机：</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" formControlName="mobile" placeholder="请输入手机号...">
+                            <div class="c-validator-invalid" [hidden]="!(userEditForm.controls['mobile'].errors && userEditForm.controls['mobile'].dirty)">
+                                   手机格式不正确
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        
+
+</div>
+<div class="modal-footer">
+        <div class="row">
+            <div class="col-md-">
+                <button type="button" class="btn btn-primary" (click)="ok()" >
+                    <i class="fa fa-check" aria-hidden="true"></i> 确定</button>
+                <button type="button" class="btn btn-light  c-ml15" (click)="close()">
+                    <i class="fa fa-close" aria-hidden="true"></i> 关闭</button>
+            </div>
         </div>
     </div>
-    <form>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-md-2 col-form-label text-right">帐号：</label>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="请输入帐号...">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-md-2 col-form-label text-right">密码：</label>
-                    <div class="col-md-10">
-                        <input type="password" class="form-control" placeholder="请输入密码...">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-md-2 col-form-label text-right">姓名：</label>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="请输入姓名...">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-md-2 col-form-label text-right">邮箱：</label>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="请输入邮箱...">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
+</form>
 </div>

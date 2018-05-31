@@ -1,6 +1,9 @@
 import { NgModule, OnInit } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { MainComponent }   from './main.component';
+import { UserAddComponent } from '../business/user/user-add/user-add.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DpDatePickerModule } from 'ng2-date-picker';
 
 /**
  * 主体路由
@@ -23,10 +26,18 @@ const mainRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(mainRoutes)
+    RouterModule.forChild(mainRoutes),
+    FormsModule,
+    ReactiveFormsModule,
+    DpDatePickerModule,
   ],
   exports: [
     RouterModule
-  ]
+  ],
+  declarations: [
+    UserAddComponent,//用户添加弹出框
+ ],
+
+ entryComponents:[UserAddComponent],
 })
 export class MainRoutingModule { }

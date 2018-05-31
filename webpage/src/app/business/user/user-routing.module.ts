@@ -11,10 +11,6 @@ const userRoutes: Routes = [
         path: '', component: UserComponent,
         children: [
             {
-                path:'userAdd',
-                component:UserAddComponent
-            },
-            {
                 path:'userList',
                 component:UserListComponent
             },
@@ -34,5 +30,6 @@ const userRoutes: Routes = [
   exports: [
     RouterModule
   ]
+
 })
 export class UserRoutingModule { }

@@ -67,5 +67,11 @@ export class HttpPaginationDemoComponent {
   }
 
 
+  add(){
+
+    console.log("add  ");
+ 
+ }
+
 
 }

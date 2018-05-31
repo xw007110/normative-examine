@@ -19,7 +19,6 @@ import { UserInfoComponent} from './user-info/user-info.component';
   ],
   declarations: [
     UserComponent,
-    UserAddComponent,
     UserListComponent,
     UserInfoComponent
   ],

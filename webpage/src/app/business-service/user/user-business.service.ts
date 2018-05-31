@@ -11,11 +11,11 @@ export class UserBusinessService {
    * 登录
    */
   login(){
-    return environment.domain+"/login1/doLogin";
+    return environment.domain+"/login/doLogin";
   }
 
   getVerify(){
-    return environment.domain+"/login1/getVerify";
+    return environment.domain+"/login/getVerify";
   }
 
 

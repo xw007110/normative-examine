@@ -14,6 +14,8 @@ import { TreeviewMenuComponent }   from './treeview-menu.component';
 
 
 import { MainRoutingModule } from './main-routing.module';
+import { UserModule } from '../business/user/user.module';
+import { UserAddComponent } from '../business/user/user-add/user-add.component';
 
 
 /**
