@@ -61,4 +61,11 @@ public interface SysUserService {
      * @return 成功状态
      */
     Integer updateUser(UserUpdateRequest userUpdateRequest, SysUser loginUserInfo);
+
+    /**
+     * 查询用户列表总数
+     * @param request 查询条件
+     * @return 用户列表
+     */
+    int countListUser(UserQueryRequest request);
 }

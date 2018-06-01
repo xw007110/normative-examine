@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -38,15 +39,17 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public SysUser disposeUserInfo(SysUser sysUser) {
         // 当前时间
-        Date nowDate = new Date();
-        Date loginTime = sysUser.getLoginTime();
-        if (loginTime == null) {
-            loginTime = nowDate;
+        Timestamp nowTime = new Timestamp(System.currentTimeMillis());
+        Timestamp loginTime = null;
+        if (sysUser.getLoginTime() == null) {
+            loginTime = nowTime;
+        }else{
+            loginTime = new Timestamp(sysUser.getLoginTime().getTime());
         }
 
         // 记录上次登录时间，上次的登录时间为上一次的登录时间
         sysUser.setLastLoginTime(loginTime);
-        sysUser.setLoginTime(nowDate);
+        sysUser.setLoginTime(nowTime);
         sysUser.setLoginCount(sysUser.getLoginCount() + 1);
         sysUserMapper.updateByPrimaryKey(sysUser);
 
@@ -106,5 +109,19 @@ public class SysUserServiceImpl implements SysUserService {
         sysUser.setLoginCount(0L);
         sysUser.setUpdateBy(loginUserInfo == null ? "" : loginUserInfo.getUserName());
         return sysUserMapper.updateByPrimaryKey(sysUser);
+    }
+
+    @Override
+    public int countListUser(UserQueryRequest request) {
+        SysUserExample example = new SysUserExample();
+        example.setLimit(request.getPageSize());
+        example.setOffset(request.getPage());
+        if (!StringUtils.isEmpty(request.getUserName())) {
+            example.createCriteria().andUserNameLike(request.getUserName());
+        }
+        if (!StringUtils.isEmpty(request.getUserName())) {
+            example.createCriteria().andMobileLike(request.getUserName());
+        }
+        return sysUserMapper.countByExample(example);
     }
 }

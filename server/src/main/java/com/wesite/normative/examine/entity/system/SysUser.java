@@ -4,6 +4,7 @@ import com.wesite.normative.examine.entity.BasePage;
 import com.wesite.normative.examine.systemConfig.valid.Check;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -32,9 +33,9 @@ public class SysUser implements Serializable {
 
     private String email;
 
-    private Date loginTime;
+    private Timestamp loginTime;
 
-    private Date lastLoginTime;
+    private Timestamp lastLoginTime;
 
     private Long loginCount;
 
@@ -126,19 +127,19 @@ public class SysUser implements Serializable {
         this.email = email;
     }
 
-    public Date getLoginTime() {
+    public Timestamp getLoginTime() {
         return loginTime;
     }
 
-    public void setLoginTime(Date loginTime) {
+    public void setLoginTime(Timestamp loginTime) {
         this.loginTime = loginTime;
     }
 
-    public Date getLastLoginTime() {
+    public Timestamp getLastLoginTime() {
         return lastLoginTime;
     }
 
-    public void setLastLoginTime(Date lastLoginTime) {
+    public void setLastLoginTime(Timestamp lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
     }
 

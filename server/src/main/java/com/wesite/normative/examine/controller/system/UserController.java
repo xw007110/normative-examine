@@ -1,6 +1,7 @@
 package com.wesite.normative.examine.controller.system;
 
 import com.alibaba.druid.support.json.JSONUtils;
+import com.alibaba.fastjson.JSON;
 import com.wesite.normative.examine.controller.BaseController;
 import com.wesite.normative.examine.entity.BaseResult;
 import com.wesite.normative.examine.entity.system.SysUser;
@@ -36,8 +37,9 @@ public class UserController extends BaseController {
     public BaseResult listUser(@Valid @ModelAttribute UserQueryRequest request) {
         logger.info("查询用户列表");
         List<SysUser> userList = sysUserService.listUser(request);
-        logger.info("结束查询用户列表,查询结果为{}" , JSONUtils.toJSONString(userList));
-        return BaseResult.ok(userList);
+        int count = sysUserService.countListUser(request);
+        logger.info("结束查询用户列表,查询结果为{}" , JSON.toJSON(userList));
+        return BaseResult.ok(userList , count);
     }
 
     @ApiOperation(value = "新增用户接口", notes = "新增用户接口,新增成功返回成功状态")

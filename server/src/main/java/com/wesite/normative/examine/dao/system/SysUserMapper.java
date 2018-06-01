@@ -15,7 +15,7 @@ import java.util.List;
 * @create 2018/2/28 16:13
 **/
 public interface SysUserMapper {
-    long countByExample(SysUserExample example);
+    int countByExample(SysUserExample example);
 
     int deleteByExample(SysUserExample example);
 

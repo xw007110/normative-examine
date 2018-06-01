@@ -14,52 +14,63 @@ public class BaseResult {
     /**
      * success
      */
-    @ApiModelProperty(value="返回状态;true或false",name="success")
+    @ApiModelProperty(value = "返回状态;true或false", name = "success")
     private boolean success;
 
     /**
      * code
      */
-    @ApiModelProperty(value="返回状态码;0为成功，其他均为失败",name="code")
+    @ApiModelProperty(value = "返回状态码;0为成功，其他均为失败", name = "code")
     private int code;
 
     /**
      * message
      */
-    @ApiModelProperty(value="返回信息",name="message")
+    @ApiModelProperty(value = "返回信息", name = "message")
     private String message;
 
     /**
      * data
      */
-    @ApiModelProperty(value="返回数据;object对象",name="message")
+    @ApiModelProperty(value = "返回数据;object对象", name = "message")
     private Object data;
 
-    private BaseResult(boolean success, int code, String message, Object data) {
+    /**
+     * 数据总数
+     */
+    @ApiModelProperty(value = "数据总数;整形", name = "count")
+    private int count;
+
+    private BaseResult(boolean success, int code, String message, Object data, int count) {
         this.success = success;
         this.code = code;
         this.message = message;
         this.data = data;
+        this.count = count;
+    }
+
+    public static BaseResult ok(Object data, int count) {
+        return new BaseResult(true, SystemMsgBase.SUCCESS_COMMON_CODE, SystemMsgBase.SUCCESS_COMMON_MSG, data, count);
     }
 
     public static BaseResult ok(Object data) {
-        return new BaseResult(true, SystemMsgBase.SUCCESS_COMMON_CODE, SystemMsgBase.SUCCESS_COMMON_MSG, data);
+        return new BaseResult(true, SystemMsgBase.SUCCESS_COMMON_CODE, SystemMsgBase.SUCCESS_COMMON_MSG, data, 0);
     }
 
     public static BaseResult ok() {
-        return new BaseResult(true, SystemMsgBase.SUCCESS_COMMON_CODE, SystemMsgBase.SUCCESS_COMMON_MSG, null);
+        return new BaseResult(true, SystemMsgBase.SUCCESS_COMMON_CODE, SystemMsgBase.SUCCESS_COMMON_MSG, null, 0);
     }
 
     public static BaseResult fail(int code, String msg, Object data) {
-        return new BaseResult(false, code, msg, data);
+        return new BaseResult(false, code, msg, data, 0);
     }
 
-    public static BaseResult fail(int code, String msg){
-        return new BaseResult(false, code, msg, null);
+    public static BaseResult fail(int code, String msg) {
+        return new BaseResult(false, code, msg, null, 0);
     }
 
-    public static BaseResult systemError(){
-        return new BaseResult(false,SystemMsgBase.SYSTEM_ERROR_CODE , SystemMsgBase.SYSTEM_ERROR_MSG , null);
+    public static BaseResult systemError() {
+        return new BaseResult(false, SystemMsgBase.SYSTEM_ERROR_CODE, SystemMsgBase.SYSTEM_ERROR_MSG, null, 0);
     }
 
 
@@ -93,5 +104,13 @@ public class BaseResult {
 
     public void setData(Object data) {
         this.data = data;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

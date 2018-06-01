@@ -10,8 +10,8 @@
     <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
     <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
     <result column="EMAIL" jdbcType="VARCHAR" property="email" />
-    <result column="LOGIN_TIME" jdbcType="DATE" property="loginTime" />
-    <result column="LAST_LOGIN_TIME" jdbcType="DATE" property="lastLoginTime" />
+    <result column="LOGIN_TIME" jdbcType="TIMESTAMP" property="loginTime" />
+    <result column="LAST_LOGIN_TIME" jdbcType="TIMESTAMP" property="lastLoginTime" />
     <result column="LOGIN_COUNT" jdbcType="BIGINT" property="loginCount" />
     <result column="ROLE_GUID" jdbcType="VARCHAR" property="roleGuid" />
     <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
@@ -236,7 +236,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.wesite.normative.examine.entity.system.SysUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.wesite.normative.examine.entity.system.SysUserExample" resultType="java.lang.Integer">
     select count(*) from sys_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
