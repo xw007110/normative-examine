@@ -4,6 +4,8 @@ import { HttpObserve } from '@angular/common/http/src/client';
 
 import { Observable } from 'rxjs/Observable';
 import { SpinService } from '../spin/spin.service';
+import { ToastService } from '../toast/toast.service';
+import { ToastConfig, ToastType } from '../toast/toast-model';
 
 /**
  * httpclient服务
@@ -13,7 +15,8 @@ export class HttpClientService {
 
   constructor(
     private httpClient: HttpClient,
-    private spinService: SpinService
+    private spinService: SpinService,
+    private toastService: ToastService,
   ) { }
 
 
@@ -166,6 +169,8 @@ export class HttpClientService {
         observer.next(res);
       }, (err) => {
         this.spinService.spin(false);
+        const toastCfg = new ToastConfig(ToastType.ERROR, '', err.json(), 3000);
+        this.toastService.toast(toastCfg);
         observer.error(err);
       }, () => {
         this.spinService.spin(false);

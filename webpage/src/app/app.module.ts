@@ -19,6 +19,8 @@ import {ToastComponent} from './shared/toast/toast.component';
 
 //http
 import { HttpService }   from './shared/http/http.service';
+import { HttpClientService } from './shared/http-client/http-client.service';
+import { HttpClientModule } from '@angular/common/http';
 
 //storage
 import { LocalStorageService } from './shared/storage/local-storage.service';
@@ -40,6 +42,7 @@ import {SelectivePreloadingStrategy} from "./selective-preloading-strategy"
 
 
 
+
 /**
  * app模块
  */
@@ -49,6 +52,7 @@ import {SelectivePreloadingStrategy} from "./selective-preloading-strategy"
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
+    HttpClientModule,
     NgbModule.forRoot()
   ],
   declarations: [
@@ -62,6 +66,7 @@ import {SelectivePreloadingStrategy} from "./selective-preloading-strategy"
     AppService,
     ToastService,
     HttpService,
+    HttpClientService,
     SpinService,
     LocalStorageService,
     SessionStorageService,
