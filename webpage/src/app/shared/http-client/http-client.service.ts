@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { SpinService } from '../spin/spin.service';
 import { ToastService } from '../toast/toast.service';
 import { ToastConfig, ToastType } from '../toast/toast-model';
+import { Result } from './model/result';
 
 /**
  * httpclient服务
@@ -65,14 +66,14 @@ export class HttpClientService {
  * @param url 
  * @param options 
  */
-  get(url: string, options: {
+  get<T>(url: string, options: {
     headers?: HttpHeaders | { [header: string]: string | string[] },
     observe?: HttpObserve,
     params?: HttpParams | { [param: string]: string | string[] },
     reportProgress?: boolean,
     responseType?: 'arraybuffer' | 'blob' | 'json' | 'text',
     withCredentials?: boolean,
-  } = {}): Observable<any> {
+  } = {}): Observable<Result<T>> {
     return this.commonProcess(this.httpClient.get(url, options = {}));
   }
 
@@ -161,12 +162,17 @@ export class HttpClientService {
    * 公共处理
    * @param observable 
    */
-  commonProcess(observable: Observable<any>): Observable<any> {
+  commonProcess<T>(observable: Observable< any>): Observable<Result<T>> {
     this.spinService.spin(true);
     return Observable.create((observer) => {
       observable.subscribe(res => {
         this.spinService.spin(false);
         observer.next(res);
+        if(res.code !=0){
+          const toastCfg = new ToastConfig(ToastType.ERROR, '', res.message , 3000);
+          this.toastService.toast(toastCfg);
+        }
+      
       }, (err) => {
         this.spinService.spin(false);
         const toastCfg = new ToastConfig(ToastType.ERROR, '', err.json(), 3000);

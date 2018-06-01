@@ -8,6 +8,7 @@ import { UserComponent } from './user.component';
 import { UserAddComponent } from './user-add/user-add.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserInfoComponent} from './user-info/user-info.component';
+import { UserBusinessService } from '../../business-service/user/user-business.service';
 
 
 @NgModule({
@@ -24,6 +25,8 @@ import { UserInfoComponent} from './user-info/user-info.component';
   ],
   exports: [
   ],
-  providers: []
+  providers: [
+    UserBusinessService
+  ]
 })
 export class UserModule { }

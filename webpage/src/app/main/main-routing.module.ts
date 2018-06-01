@@ -4,6 +4,7 @@ import { MainComponent }   from './main.component';
 import { UserAddComponent } from '../business/user/user-add/user-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DpDatePickerModule } from 'ng2-date-picker';
+import { UserBusinessService } from '../business-service/user/user-business.service';
 
 /**
  * 主体路由
@@ -37,7 +38,9 @@ const mainRoutes: Routes = [
   declarations: [
     UserAddComponent,//用户添加弹出框
  ],
-
+providers:[
+  UserBusinessService,
+],
  entryComponents:[UserAddComponent],
 })
 export class MainRoutingModule { }
