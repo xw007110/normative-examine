@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private toastService: ToastService,
-    private httpService: HttpService,
     private userBusinessService: UserBusinessService,
     private sanitizer: DomSanitizer,
     private formBuilder: FormBuilder) {
@@ -52,14 +51,22 @@ export class LoginComponent implements OnInit {
   }
 
   getVerify() {
-    let that = this;
-    
 
-    this.httpService.get(this.userBusinessService.getVerify(), {
-    },  (successful, data, res) => {
-      that.verifyCode = that.sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' + data.data.img);
-    });
+
+    let observable = this.userBusinessService.getVerify();
+    observable.subscribe(
+      data => {
+          this.verifyCode = this.sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' + data.data.img);
+      },
+      error => {
+        console.log("findByMember  url " + error)
+        return;
+
+      }
+    );
   }
+   
+
 
 
   /**
@@ -67,23 +74,22 @@ export class LoginComponent implements OnInit {
    */
   login() {
     if (this.loginForm.valid) {
-
-      this.httpService.post(this.userBusinessService.login(), {
-        account:  this.loginForm.controls['account'].value,
-        passWord:  Md5.hashStr(this.loginForm.controls['passWord'].value),
-        verifyCode: this.loginForm.controls['verifyCode'].value
-      },  (successful, data, res) => {
-        if (successful && Utils.resultSuccess(data.success)) {
-          const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功', 3000);
-          this.toastService.toast(toastCfg);
-          this.router.navigate(['/app/home']);
+    let observable = this.userBusinessService.login(this.loginForm.value);
+      observable.subscribe(
+        data => {
+            const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功', 3000);
+                  this.toastService.toast(toastCfg);
+                  this.router.navigate(['/app/home']);
+        },
+        error => {
+          console.log("findByMember  url " + error)
+          return;
+  
         }
-      });
+      );
 
     }
-    // const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功！', 3000);
-    // this.toastService.toast(toastCfg);
-    // this.router.navigate(['/app/home']);
+
   }
 
 

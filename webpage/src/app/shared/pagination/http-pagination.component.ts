@@ -84,33 +84,33 @@ export class HttpPaginationComponent implements OnInit {
             serviceData.pageSize = this.pageSize;
         }
 
-        if (this.method == HttpPaginationMethod.GET && Utils.isNotEmpty(this.url)) {
-            this.httpService.get(this.url, serviceData, function (successful, data, res) {
-                if (successful) {
-                    that.serverDataProcess(data);
-                } else {
-                    const toastCfg = new ToastConfig(ToastType.ERROR, '', '数据请求失败！', 3000);
-                    that.toastService.toast(toastCfg);
-                }
-            }, function (successful, msg, err) {
-                const toastCfg = new ToastConfig(ToastType.ERROR, '', msg, 3000);
-                that.toastService.toast(toastCfg);
-            });
-        } else if (Utils.isNotEmpty(this.url)) {
-            this.httpService.post(this.url, serviceData, function (successful, data, res) {
-                if (successful) {
-                    that.serverDataProcess(data);
-                } else {
-                    const toastCfg = new ToastConfig(ToastType.ERROR, '', '数据请求失败！', 3000);
-                    that.toastService.toast(toastCfg);
-                }
-            }, function (successful, msg, err) {
-                const toastCfg = new ToastConfig(ToastType.ERROR, '', msg, 3000);
-                that.toastService.toast(toastCfg);
-            });
-        } else {
-            console.error("c-http-pagination组件请求时，url参数为空！");
-        }
+        // if (this.method == HttpPaginationMethod.GET && Utils.isNotEmpty(this.url)) {
+        //     this.httpService.get(this.url, serviceData, function (successful, data, res) {
+        //         if (successful) {
+        //             that.serverDataProcess(data);
+        //         } else {
+        //             const toastCfg = new ToastConfig(ToastType.ERROR, '', '数据请求失败！', 3000);
+        //             that.toastService.toast(toastCfg);
+        //         }
+        //     }, function (successful, msg, err) {
+        //         const toastCfg = new ToastConfig(ToastType.ERROR, '', msg, 3000);
+        //         that.toastService.toast(toastCfg);
+        //     });
+        // } else if (Utils.isNotEmpty(this.url)) {
+        //     this.httpService.post(this.url, serviceData, function (successful, data, res) {
+        //         if (successful) {
+        //             that.serverDataProcess(data);
+        //         } else {
+        //             const toastCfg = new ToastConfig(ToastType.ERROR, '', '数据请求失败！', 3000);
+        //             that.toastService.toast(toastCfg);
+        //         }
+        //     }, function (successful, msg, err) {
+        //         const toastCfg = new ToastConfig(ToastType.ERROR, '', msg, 3000);
+        //         that.toastService.toast(toastCfg);
+        //     });
+        // } else {
+        //     console.error("c-http-pagination组件请求时，url参数为空！");
+        // }
     }
 
 
