@@ -129,12 +129,12 @@ public class ParameterCheckOption {
             }
         }
         if (check.isMobile()) {
-            if (!CommonUtils.checkMobile(String.valueOf(field.get(args)))) {
+            if (StringUtils.isEmpty(String.valueOf(field.get(args))) && !CommonUtils.checkMobile(String.valueOf(field.get(args)))) {
                 return "请填写正确的" + check.name();
             }
         }
-        if(check.isEmail()){
-            if(!CommonUtils.checkEmail(String.valueOf(field.get(args)))){
+        if (check.isEmail()) {
+            if (StringUtils.isEmpty(String.valueOf(field.get(args))) && !CommonUtils.checkEmail(String.valueOf(field.get(args)))) {
                 return "请填写正确的" + check.name();
             }
         }
