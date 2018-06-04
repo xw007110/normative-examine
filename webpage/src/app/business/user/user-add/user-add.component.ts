@@ -7,7 +7,6 @@ import { CustomValidators } from '../../../shared/custom-validator/custom-valida
 import { UserBusinessService } from '../../../business-service/user/user-business.service';
 import { ToastConfig, ToastType } from '../../../shared/toast/toast-model';
 import { UserInfo } from '../model/user.info';
-import { format } from 'path';
 
 @Component({
   selector: 'c-user-add',
