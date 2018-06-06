@@ -39,9 +39,18 @@ export class UserBusinessService {
   /**
    * 用户列表
    */
-  listUser(page, pageSize,userName){
-    let url = environment.domain+"/user/listUser";
-    return this.httpClient.get(url);
+  listUser(page, pageSize,userName,mobile){
+    //?page=1&pageSize=10&userName=111&mobile=111
+    let query : string = `?page=${page}&pageSize=${ pageSize }`
+    if(userName){
+      query+=`&userName=${userName}`
+    }
+    if(mobile){
+      query+=`&mobile=${mobile}`
+    }
+    let url = `${environment.domain}/user/listUser${query}`;
+    console.log(url);
+    return this.httpClient.get<Array<UserInfo>>(url);
   }
 
 

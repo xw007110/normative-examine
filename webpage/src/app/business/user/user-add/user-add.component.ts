@@ -42,6 +42,7 @@ export class UserAddComponent {
       mobile:mobileFc,
       sex:sexFc
     });
+
   }
 
 

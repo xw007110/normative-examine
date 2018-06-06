@@ -5,6 +5,6 @@ export class Result<T> {
     data :T; // 返回数据;object对象 ,
     message :string;// 返回信息 ,
     success :boolean; // 返回状态;true或false
-    
+    count:number;//分页数量
     constructor() {}
 }

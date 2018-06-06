@@ -9,6 +9,7 @@ import { UserAddComponent } from './user-add/user-add.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserInfoComponent} from './user-info/user-info.component';
 import { UserBusinessService } from '../../business-service/user/user-business.service';
+import { PipeModule } from '../../shared/pipes/pipe.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { UserBusinessService } from '../../business-service/user/user-business.s
     CommonModule,
     FormsModule,
     UserRoutingModule,
-    PaginationModule
+    PaginationModule,
+    PipeModule
   ],
   declarations: [
     UserComponent,
