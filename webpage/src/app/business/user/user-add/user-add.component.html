@@ -75,7 +75,9 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label text-right">生日：</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" formControlName="birthday" [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'day'"   placeholder="日期">
+                            <input type="text" class="form-control" formControlName="birthday"
+                            
+                             [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'day'"   placeholder="日期">
                             
                         </div>
                     </div>
@@ -99,10 +101,10 @@
                             <label class="col-md-3 col-form-label text-right">性别：</label>
                             
                                     <label class="col-md-3 col-form-label ">
-                                        <input type="radio" value="0" name="sex" formControlName="sex">男
+                                        <input type="radio" value="1" name="sex" formControlName="sex">男
                                     </label>
                                     <label class="col-md-3 col-form-label ">
-                                        <input type="radio" value="1" name="sex" formControlName="sex">女
+                                        <input type="radio" value="0" name="sex" formControlName="sex">女
                                     </label>
                                  
                                 </div>

@@ -7,8 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent }   from './login.component';
 
 import { LoginRoutingModule } from './login-routing.module';
+import { UserBusinessService } from '../business-service/user/user-business.service';
 
-import { UserBusinessService} from '../business-service/user/user-business.service';
 
 
 
@@ -24,8 +24,6 @@ import { UserBusinessService} from '../business-service/user/user-business.servi
      LoginComponent
   ],
   exports:      [],
-  providers:    [
-    UserBusinessService
-  ]
+  providers:    [UserBusinessService]
 })
 export class LoginModule { }
